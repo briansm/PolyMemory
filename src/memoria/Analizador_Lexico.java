@@ -27,12 +27,14 @@ public class Analizador_Lexico {
             switch(estado){
                 //---------Estado 0-------------------------------------
                 case 0:
-                    if(Character.isLetter(caracter[i]))
+                  //-------letra-----------  
+                  if((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122))
                     {
                         estado=1;
                         lexema+=caracter[i];                    
                     }
-                    else if(Character.isDigit(caracter[i]))
+                  //-------Numero----------- 
+                    else if((caracter[i]>=48 && caracter[i]<=57))
                     {
                         estado=2;
                         lexema+=caracter[i];
@@ -55,7 +57,8 @@ public class Analizador_Lexico {
                         estado=5;
                         lexema+=caracter[i];
                     }
-                    else if(Character.isDigit(caracter[i])||Character.isLetter(caracter[i])||caracter[i]==95)
+                    //----Numero,letra,_-------------
+                    else if((caracter[i]>=48 && caracter[i]<=57)||((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122))||caracter[i]==95)
                     {
                         estado=6;
                         lexema+=caracter[i];
@@ -68,7 +71,8 @@ public class Analizador_Lexico {
                 break;
                 //------------#Estado 2-----------------------
                 case 2:
-                    if(Character.isDigit(caracter[i]))
+                    //---------Numero-----------------------
+                    if((caracter[i]>=48 && caracter[i]<=57))
                     {
                         estado=2;
                         lexema+=caracter[i];
@@ -109,7 +113,8 @@ public class Analizador_Lexico {
                 break;
                 //------------Estado 7---------------------
                 case 7:
-                    if(Character.isLetter(caracter[i]))
+                    //----------Letra---------
+                    if(((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122)))
                     {
                        estado=11;
                        lexema+=caracter[i];  
@@ -117,7 +122,8 @@ public class Analizador_Lexico {
                 break;
                 //------------Estado 8---------------------
                 case 8:
-                    if(Character.isDigit(caracter[i]))
+                    //----------Numero-----------------
+                    if((caracter[i]>=48 && caracter[i]<=57))
                     {
                        estado=12;
                        lexema+=caracter[i];  
@@ -129,7 +135,8 @@ public class Analizador_Lexico {
                 break;
                 //------------Estado 10---------------------
                 case 10:
-                    if(Character.isDigit(caracter[i])||Character.isLetter(caracter[i]))
+                    //----Numero,letra-------------
+                    if((caracter[i]>=48 && caracter[i]<=57)||((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122)))
                     {
                         estado=13;
                         lexema+=caracter[i];
@@ -137,7 +144,8 @@ public class Analizador_Lexico {
                 break;
                 //------------#Estado 11---------------------
                 case 11:
-                    if(Character.isDigit(caracter[i])||Character.isLetter(caracter[i])||caracter[i]==95)
+                    //----Numero,letra,_-------------
+                    if((caracter[i]>=48 && caracter[i]<=57)||((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122))||caracter[i]==95)
                     {
                         estado=11;
                         lexema+=caracter[i];
@@ -145,7 +153,8 @@ public class Analizador_Lexico {
                 break;
                 //------------#Estado 12---------------------
                 case 12:
-                    if(Character.isDigit(caracter[i]))
+                    //----------Numero
+                    if((caracter[i]>=48 && caracter[i]<=57))
                     {
                        estado=12;
                        lexema+=caracter[i];  
@@ -153,7 +162,8 @@ public class Analizador_Lexico {
                 break;
                 //------------Estado 13---------------------
                 case 13:
-                    if(Character.isDigit(caracter[i])||Character.isLetter(caracter[i])||caracter[i]==95)
+                    //----Numero,letra,_-------------
+                    if((caracter[i]>=48 && caracter[i]<=57)||((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122))||caracter[i]==95)
                     {
                         estado=13;
                         lexema+=caracter[i];
@@ -171,7 +181,8 @@ public class Analizador_Lexico {
                 break;
                 //------------Estado 14---------------------
                 case 14:
-                    if(Character.isDigit(caracter[i])||Character.isLetter(caracter[i]))
+                    //----Numero,letra-------------
+                    if((caracter[i]>=48 && caracter[i]<=57)||((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122)))
                     {
                         estado=16;
                         lexema+=caracter[i];
@@ -179,7 +190,8 @@ public class Analizador_Lexico {
                 break;
                 //------------Estado 15---------------------
                 case 15:
-                    if(Character.isLetter(caracter[i]))
+                    //---------------letra----------------------
+                    if(((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122)))
                     {
                        estado=17;
                        lexema+=caracter[i];  
@@ -187,7 +199,8 @@ public class Analizador_Lexico {
                 break;
                 //------------Estado 16---------------------
                 case 16:
-                    if(Character.isDigit(caracter[i])||Character.isLetter(caracter[i])||caracter[i]==95)
+                    //----Numero,letra,_-------------
+                    if((caracter[i]>=48 && caracter[i]<=57)||((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122))||caracter[i]==95)
                     {
                         estado=16;
                         lexema+=caracter[i];
@@ -205,7 +218,8 @@ public class Analizador_Lexico {
                 break;
                 //------------Estado 17---------------------
                 case 17:
-                    if(Character.isLetter(caracter[i]))
+                    //-----------letra---------------------------
+                    if(((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122)))
                     {
                        estado=18;
                        lexema+=caracter[i];  
@@ -213,7 +227,8 @@ public class Analizador_Lexico {
                 break;
                 //------------Estado 18---------------------
                 case 18:
-                    if(Character.isDigit(caracter[i])||Character.isLetter(caracter[i]))
+                    //----Numero,letra-------------
+                    if((caracter[i]>=48 && caracter[i]<=57)||((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122)))
                     {
                         estado=119;
                         lexema+=caracter[i];
