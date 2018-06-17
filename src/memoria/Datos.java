@@ -1,0 +1,93 @@
+
+package memoria;
+
+
+public class Datos {
+    
+    //-------Declaracion de variables--------
+    int numero;
+        int fila = 1;
+        int columna;
+
+        String lexi;
+        String error;
+        String token;
+        String Terror = "Error Lexico, TOken No reconocido";
+    
+    //------------------Construcctores---------------------
+    public Datos(int num,String lexe,String tokn,int f,int c){
+        this.numero = num;
+        this.lexi = lexe;
+        this.token = tokn;
+        this.fila = f;
+        this.columna = c;
+    }
+    public Datos(int num,String error,int f,int c){
+        this.numero = num;
+        this.error = error;
+        this.fila = f;
+        this.columna = c;
+    }
+    
+    //-------------------Getters y setter------------------------------------------
+            public int getNumero() {
+                return numero;   
+            }
+            public void setNumero(int nume) {
+                this.numero = nume;
+            }
+
+            public int getFila()
+            {
+                return fila;
+            }
+            public void setFila(int fila)
+            {
+                this.fila = fila;
+            }
+
+            public int getColum()
+            {
+                return columna;
+            }
+            public void setColum(int colum)
+            {
+                this.columna = colum;
+            }
+
+            public String getLexi()
+            {
+                return lexi;
+            }
+            public void setLexi(String lexi)
+            {
+                this.lexi = lexi;
+            }
+
+            public String getToken()
+            {
+                return token;
+            }
+            public void setToken(String  token)
+            {
+                this.token = token;
+            }
+
+            public String getError()
+            {
+                return error;
+            }
+            public void setError(String error)
+            {
+                this.error = error;
+            }
+
+            public String getTerror()
+            {
+                return Terror;
+            }
+            public void setTerror(String terror)
+            {
+                this.Terror = terror;
+            }
+}
