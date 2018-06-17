@@ -1,14 +1,34 @@
 
 package memoria;
 
+import java.util.ArrayList;
+
 
 public class Analizador_Lexico {
     int estado=0;
+    int num=0;
     int fila=1;
     int columna=0;
     String lexema="";
+    public ArrayList<Datos>arregloToken=new ArrayList<Datos>();
+    public ArrayList<Datos>arregloError=new ArrayList<Datos>();
     
-    //-----------------Inicio--------------------------
+    public ArrayList<Datos> getArrT(){
+        return arregloToken;
+    }
+    public void setAT(ArrayList<Datos> arregloToken){
+        this.arregloToken=arregloToken;
+    }
+    public ArrayList<Datos>getArrE(){
+        return arregloError;
+    }
+    public void setAE(ArrayList<Datos>arregloError){
+        this.arregloError=arregloError;
+    }
+    
+    
+    
+ //-----------------Inicio--------------------------
     public void lexico(String entrada){
         char [] caracter=entrada.toCharArray();
         //----------loop que recorre el arreglo--------------------
@@ -67,6 +87,18 @@ public class Analizador_Lexico {
                     {
                         estado=7;
                         lexema+=caracter[i];
+                    }
+                    else if(caracter[i] == 32 || caracter[i] == 10 || caracter[i] == 9)
+                    {
+                        num++;
+                        arregloToken.add(new Datos(num,lexema,tipoT(lexema),fila,columna));
+                        lexema="";
+                        estado=0;
+                    }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
                     }
                 break;
                 //------------#Estado 2-----------------------
@@ -247,11 +279,111 @@ public class Analizador_Lexico {
             //---------FIN ANALISIS-----------------------
         }
         //------------FIN LOOP----------------------
-    
-    
-    
-    
+ 
     }
     
+    //--------Metodo Para Reconocer Tokens----------------------------
+    public String tipoT(String lexema){
+        String tipo_token="";
+        
+        if(lexema=="Configuracion" || lexema=="configuracion"){
+            tipo_token="Token_Configuracion";
+        }
+        else if(lexema=="Juego" || lexema=="juego")
+        {
+            tipo_token="Token_Juego";
+        }
+        else if(lexema=="Nivel" || lexema=="nivel")
+        {
+            tipo_token="Token_Nivel";
+        }
+        else if(lexema=="Facil" || lexema=="facil")
+        {
+            tipo_token="Token_Facil";
+        }
+        else if(lexema=="Intermedio" || lexema=="intermedio")
+        {
+            tipo_token="Token_Intermedio";
+        }
+        else if(lexema=="Dificil" || lexema=="dificil")
+        {
+            tipo_token="Token_Dificil";
+        }
+        else if(lexema=="Tiempo" || lexema=="tiempo")
+        {
+            tipo_token="Token_Tiempo";
+        }
+        else if(lexema=="Usuarios" || lexema=="usuarios")
+        {
+            tipo_token="Token_Usuarios";
+        }
+        else if(lexema=="Nombre" || lexema=="nombre")
+        {
+            tipo_token="Token_Nombre";
+        }
+        else if(lexema=="Sonido" || lexema=="sonido")
+        {
+            tipo_token="Token_Sonido";
+        }
+        else if(lexema=="Track_1" || lexema=="track_1")
+        {
+            tipo_token="Token_Track";
+        }
+        else if(lexema=="Imagen" || lexema=="imagen")
+        {
+            tipo_token="Token_Imagen";
+        }
+        else if(lexema=="Idioma" || lexema=="idioma")
+        {
+            tipo_token="Token_Idioma";
+        }
+        else if(lexema=="Palabra" || lexema=="palabra")
+        {
+            tipo_token="Token_Palabra";
+        }
+        else if(lexema=="Carta" || lexema=="carta")
+        {
+            tipo_token="Token_Carta";
+        }
+        else if(lexema=="End-Configuracion" || lexema=="end-configuracion")
+        {
+            tipo_token="Token_End-Configuracion";
+        }
+        else if(lexema=="End-Nivel" || lexema=="end-nivel")
+        {
+            tipo_token="Token_End-Nivel";
+        }
+        else if(lexema=="End-Tiempo" || lexema=="end-tiempo")
+        {
+            tipo_token="Token_End-Tiempo";
+        }
+        else if(lexema=="End-Juego" || lexema=="end-juego")
+        {
+            tipo_token="Token_End-Juego";
+        }
+        else if(lexema=="End-Usuarios" || lexema=="end-usuarios")
+        {
+            tipo_token="Token_End-Usuarios";
+        }
+        else if(lexema=="End-Sonido" || lexema=="end-sonido")
+        {
+            tipo_token="Token_End-Sonido";
+        }
+        else if(lexema=="End-Carta" || lexema=="end-carta")
+        {
+            tipo_token="Token_End-Carta";
+        }
+        else if(lexema=="End-Nivel" || lexema=="end-nivel")
+        {
+            tipo_token="Token_End-Nivel";
+        }
+        else if(lexema=="->")
+        {
+            tipo_token="Token_->";
+        }
+        
+    return tipo_token;
+    }
+   
     
 }
