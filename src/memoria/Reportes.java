@@ -9,7 +9,7 @@ public class Reportes {
     //------Declaracion de listas-----------------------
     ArrayList<Datos>list;
     ArrayList<Datos>lise;
-    
+    Crear_Reporte crearR=new Crear_Reporte();
     //---------Metodo para Reporte Tokens---------------
     public void CrearRT(ArrayList lista){
         list=lista;
@@ -78,7 +78,8 @@ public class Reportes {
                 + "</body>\n "
                 + "</html>";    
             //---------------------FIN HTML-----------------------------------------
-      //------Falta generar archivo------        
+      //------Falta generar archivo------     
+            crearR.guardarReporte(html, "Simbolos");
     }
     //-------------------------------Metodo para reporte errores---------------------
     public void CrearRE(ArrayList lista){
@@ -145,7 +146,8 @@ public class Reportes {
                 + "</body>\n "
                 + "</html>";
            //---------------------FIN HTML-----------------------------------------
-      //------Falta generar archivo------   
+      //------Falta generar archivo------  
+           crearR.guardarReporte(html1, "Error");
     }
     
 }
