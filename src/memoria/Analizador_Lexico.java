@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Analizador_Lexico {
     int estado=0;
     int num=0;
+    int numer=0;
     int fila=1;
     int columna=0;
     String lexema="";
@@ -69,6 +70,11 @@ public class Analizador_Lexico {
                         estado=4;
                         lexema+=caracter[i];
                     }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
+                    }
                 break;
                 //-------------#Estado 1-------------------------------------
                 case 1:
@@ -114,6 +120,18 @@ public class Analizador_Lexico {
                         estado=8;
                         lexema+=caracter[i];
                     }
+                    else if(caracter[i] == 32 || caracter[i] == 10 || caracter[i] == 9)
+                    {
+                        num++;
+                        arregloToken.add(new Datos(num,lexema,"Token_Digito",fila,columna));
+                        lexema="";
+                        estado=0;
+                    }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
+                    }
                 break;
                 //----------#Estado 3-------------------------
                 case 3:
@@ -122,10 +140,25 @@ public class Analizador_Lexico {
                         estado=9;
                         lexema+=caracter[i];
                     }
+                    else if(caracter[i] == 32 || caracter[i] == 10 || caracter[i] == 9)
+                    {
+                        num++;
+                        arregloToken.add(new Datos(num,lexema,"Token_Simbolo",fila,columna));
+                        lexema="";
+                        estado=0;
+                    }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
+                    }
                 break;
                 //------------#Estado 4---------------------
                 case 4:
-                    
+                        num++;
+                        arregloToken.add(new Datos(num,lexema,"Token_Simbolo",fila,columna));
+                        lexema="";
+                        estado=0;
                 break;
                 //------------Estado 5---------------------
                 case 5:
@@ -134,6 +167,11 @@ public class Analizador_Lexico {
                         estado=10;
                         lexema+=caracter[i];  
                     }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
+                    }
                 break;
                 //------------#Estado 6---------------------
                 case 6:
@@ -141,6 +179,18 @@ public class Analizador_Lexico {
                     {
                         estado=7;
                         lexema+=caracter[i];  
+                    }
+                    else if(caracter[i] == 32 || caracter[i] == 10 || caracter[i] == 9)
+                    {
+                        num++;
+                        arregloToken.add(new Datos(num,lexema,"Token_ID",fila,columna));
+                        lexema="";
+                        estado=0;
+                    }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
                     }
                 break;
                 //------------Estado 7---------------------
@@ -151,6 +201,11 @@ public class Analizador_Lexico {
                        estado=11;
                        lexema+=caracter[i];  
                     }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
+                    }
                 break;
                 //------------Estado 8---------------------
                 case 8:
@@ -160,10 +215,18 @@ public class Analizador_Lexico {
                        estado=12;
                        lexema+=caracter[i];  
                     }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
+                    }
                 break;
                 //------------#Estado 9---------------------
                 case 9:
-                    
+                        num++;
+                        arregloToken.add(new Datos(num,lexema,tipoT(lexema),fila,columna));
+                        lexema="";
+                        estado=0;
                 break;
                 //------------Estado 10---------------------
                 case 10:
@@ -172,6 +235,11 @@ public class Analizador_Lexico {
                     {
                         estado=13;
                         lexema+=caracter[i];
+                    }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
                     }
                 break;
                 //------------#Estado 11---------------------
@@ -182,6 +250,11 @@ public class Analizador_Lexico {
                         estado=11;
                         lexema+=caracter[i];
                     }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
+                    }
                 break;
                 //------------#Estado 12---------------------
                 case 12:
@@ -190,6 +263,18 @@ public class Analizador_Lexico {
                     {
                        estado=12;
                        lexema+=caracter[i];  
+                    }
+                    else if(caracter[i] == 32 || caracter[i] == 10 || caracter[i] == 9)
+                    {
+                        num++;
+                        arregloToken.add(new Datos(num,lexema,"Token_Digito",fila,columna));
+                        lexema="";
+                        estado=0;
+                    }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
                     }
                 break;
                 //------------Estado 13---------------------
@@ -210,6 +295,11 @@ public class Analizador_Lexico {
                         estado=15;
                         lexema+=caracter[i];
                     }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
+                    }
                 break;
                 //------------Estado 14---------------------
                 case 14:
@@ -219,6 +309,11 @@ public class Analizador_Lexico {
                         estado=16;
                         lexema+=caracter[i];
                     }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
+                    }
                 break;
                 //------------Estado 15---------------------
                 case 15:
@@ -227,6 +322,11 @@ public class Analizador_Lexico {
                     {
                        estado=17;
                        lexema+=caracter[i];  
+                    }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
                     }
                 break;
                 //------------Estado 16---------------------
@@ -247,6 +347,11 @@ public class Analizador_Lexico {
                         estado=15;
                         lexema+=caracter[i];
                     }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
+                    }
                 break;
                 //------------Estado 17---------------------
                 case 17:
@@ -256,23 +361,47 @@ public class Analizador_Lexico {
                        estado=18;
                        lexema+=caracter[i];  
                     }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
+                    }
                 break;
                 //------------Estado 18---------------------
                 case 18:
                     //----Numero,letra-------------
                     if((caracter[i]>=48 && caracter[i]<=57)||((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122)))
                     {
-                        estado=119;
+                        estado=19;
                         lexema+=caracter[i];
+                    }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
                     }
                 break;
                 //------------#Estado 19---------------------
                 case 19:
-                    
+                        num++;
+                        arregloToken.add(new Datos(num,lexema,"Token_Simbolo",fila,columna));
+                        lexema="";
+                        estado=0;
                 break;
                 //------------Estado error---------------------
                 case 100:
-                    
+                    if(caracter[i] == 32 || caracter[i] == 10 || caracter[i] == 9)
+                    {
+                        numer++;
+                        arregloToken.add(new Datos(numer,lexema,fila,columna));
+                        lexema="";
+                        estado=0;
+                    }
+                    else
+                    {
+                        lexema+=caracter[i];
+                        estado=100;
+                    }
                 break;
                   
             }
