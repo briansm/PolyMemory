@@ -13,10 +13,10 @@ public class Crear_Reporte {
     public void guardarReporte(String codigoHTML, String tipoReporte){
         String nombreArchivo = "";
         if(tipoReporte == "Simbolos"){
-            nombreArchivo="C:\\Users\\Dell E5420\\Documents\\SEMESTRES\\Simbolos.html";
+            nombreArchivo="C:\\Users\\Dell E5420\\Documents\\Simbolos.html";
            
         }else if(tipoReporte == "Error"){
-            nombreArchivo="C:\\Users\\Dell E5420\\Documents\\SEMESTRES\\Errores.html";
+            nombreArchivo="C:\\Users\\Dell E5420\\Documents\\Errores.html";
         }
         archivo = new File(nombreArchivo);
         try(FileWriter fw = new FileWriter(archivo)){

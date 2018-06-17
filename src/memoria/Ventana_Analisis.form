@@ -78,16 +78,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Analizar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_analizarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_simbolos">
       <Properties>
         <Property name="text" type="java.lang.String" value="T.Simbolos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_simbolosActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_errores">
       <Properties>
         <Property name="text" type="java.lang.String" value="T.Errores"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_erroresActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

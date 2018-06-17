@@ -11,9 +11,8 @@ package memoria;
  */
 public class Ventana_Analisis extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Ventana_Analisis
-     */
+    Analizador_Lexico analisis=new Analizador_Lexico();
+    Reportes reportes= new Reportes();
     public Ventana_Analisis() {
         initComponents();
     }
@@ -40,10 +39,25 @@ public class Ventana_Analisis extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Area_editor);
 
         btn_analizar.setText("Analizar");
+        btn_analizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_analizarActionPerformed(evt);
+            }
+        });
 
         btn_simbolos.setText("T.Simbolos");
+        btn_simbolos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_simbolosActionPerformed(evt);
+            }
+        });
 
         btn_errores.setText("T.Errores");
+        btn_errores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_erroresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,6 +92,19 @@ public class Ventana_Analisis extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_analizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_analizarActionPerformed
+        String entrada=Area_editor.getText();
+        analisis.lexico(entrada);
+    }//GEN-LAST:event_btn_analizarActionPerformed
+
+    private void btn_simbolosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simbolosActionPerformed
+        reportes.CrearRT(analisis.getArrT());
+    }//GEN-LAST:event_btn_simbolosActionPerformed
+
+    private void btn_erroresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_erroresActionPerformed
+        reportes.CrearRE(analisis.getArrE());
+    }//GEN-LAST:event_btn_erroresActionPerformed
 
     /**
      * @param args the command line arguments

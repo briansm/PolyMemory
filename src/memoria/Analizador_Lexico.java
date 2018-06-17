@@ -70,6 +70,21 @@ public class Analizador_Lexico {
                         estado=4;
                         lexema+=caracter[i];
                     }
+                    else if(caracter[i]==91)
+                    {
+                        estado=20;
+                        lexema+=caracter[i];
+                    }
+                    else if(caracter[i]==93)
+                    {
+                        estado=21;
+                        lexema+=caracter[i];
+                    }
+                    else if(caracter[i]==34)
+                    {
+                        estado=4;
+                        lexema+=caracter[i];
+                    }
                     else
                     {
                         lexema+=caracter[i];
@@ -224,7 +239,7 @@ public class Analizador_Lexico {
                 //------------#Estado 9---------------------
                 case 9:
                         num++;
-                        arregloToken.add(new Datos(num,lexema,tipoT(lexema),fila,columna));
+                        arregloToken.add(new Datos(num,lexema,"Token_->",fila,columna));
                         lexema="";
                         estado=0;
                 break;
@@ -384,7 +399,21 @@ public class Analizador_Lexico {
                 //------------#Estado 19---------------------
                 case 19:
                         num++;
-                        arregloToken.add(new Datos(num,lexema,"Token_Simbolo",fila,columna));
+                        arregloToken.add(new Datos(num,lexema,"Token_Ruta",fila,columna));
+                        lexema="";
+                        estado=0;
+                break;
+                //------------#Estado 20---------------------
+                case 20:
+                        num++;
+                        arregloToken.add(new Datos(num,lexema,"Token_[",fila,columna));
+                        lexema="";
+                        estado=0;
+                break;
+                //------------#Estado 19---------------------
+                case 21:
+                        num++;
+                        arregloToken.add(new Datos(num,lexema,"Token_]",fila,columna));
                         lexema="";
                         estado=0;
                 break;
@@ -415,7 +444,7 @@ public class Analizador_Lexico {
     public String tipoT(String lexema){
         String tipo_token="";
         
-        if(lexema=="Configuracion" || lexema=="configuracion"){
+        if(lexema.equals("Configuracion")){
             tipo_token="Token_Configuracion";
         }
         else if(lexema=="Juego" || lexema=="juego")
