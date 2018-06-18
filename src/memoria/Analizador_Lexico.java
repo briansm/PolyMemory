@@ -31,6 +31,7 @@ public class Analizador_Lexico {
     
  //-----------------Inicio--------------------------
     public void lexico(String entrada){
+        entrada+=" ";
         char [] caracter=entrada.toCharArray();
         //----------loop que recorre el arreglo--------------------
         for(int i=0;i<caracter.length;i++){
@@ -543,7 +544,10 @@ public class Analizador_Lexico {
         {
             tipo_token="Token_->";
         }
-        
+        else
+        {
+            tipo_token="Token_Id";
+        }
     return tipo_token;
     }
    
