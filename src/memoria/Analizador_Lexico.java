@@ -49,7 +49,7 @@ public class Analizador_Lexico {
                 //---------Estado 0-------------------------------------
                 case 0:
                   //-------letra-----------  
-                  if((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122))
+                  if(((caracter[i]>=65 && caracter[i]<=90)) ||((caracter[i]>=97 && caracter[i]<=122)))
                     {
                         estado=1;
                         lexema+=caracter[i];                    
@@ -99,7 +99,7 @@ public class Analizador_Lexico {
                         lexema+=caracter[i];
                     }
                     //----Numero,letra,_-------------
-                    else if((caracter[i]>=48 && caracter[i]<=57)||((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122))||caracter[i]==95)
+                    else if(((caracter[i]>=48 && caracter[i]<=57))||((caracter[i]>=65 && caracter[i]<=90)) ||((caracter[i]>=97 && caracter[i]<=122))||(caracter[i]==95))
                     {
                         estado=6;
                         lexema+=caracter[i];
@@ -195,10 +195,16 @@ public class Analizador_Lexico {
                         estado=7;
                         lexema+=caracter[i];  
                     }
+                    //----Numero,letra,_-------------
+                    else if((((caracter[i]>=48 && caracter[i]<=57))||((caracter[i]>=65 && caracter[i]<=90))) || ((caracter[i]>=97 && caracter[i]<=122))||caracter[i]==95)
+                    {
+                        estado=6;
+                        lexema+=caracter[i];
+                    }
                     else if(caracter[i] == 32 || caracter[i] == 10 || caracter[i] == 9)
                     {
                         num++;
-                        arregloToken.add(new Datos(num,lexema,"Token_ID",fila,columna));
+                        arregloToken.add(new Datos(num,lexema,tipoT(lexema),fila,columna));
                         lexema="";
                         estado=0;
                     }
@@ -260,9 +266,9 @@ public class Analizador_Lexico {
                 //------------#Estado 11---------------------
                 case 11:
                     //----Numero,letra,_-------------
-                    if((caracter[i]>=48 && caracter[i]<=57)||((caracter[i]>=65 && caracter[i]<=90) ||(caracter[i]>=97 && caracter[i]<=122))||caracter[i]==95)
+                    if((((caracter[i]>=48 && caracter[i]<=57))||((caracter[i]>=65 && caracter[i]<=90))) || ((caracter[i]>=97 && caracter[i]<=122))||caracter[i]==95)
                     {
-                        estado=11;
+                        estado=6;
                         lexema+=caracter[i];
                     }
                     else
@@ -443,98 +449,96 @@ public class Analizador_Lexico {
     //--------Metodo Para Reconocer Tokens----------------------------
     public String tipoT(String lexema){
         String tipo_token="";
-        
-        if(lexema.equals("Configuracion")){
+           
+        if((lexema.equals("Configuracion"))||(lexema.equals("configuracion")))
+        {
             tipo_token="Token_Configuracion";
         }
-        else if(lexema=="Juego" || lexema=="juego")
+        else if((lexema.equals("Juego"))||(lexema.equals("juego")))
         {
             tipo_token="Token_Juego";
         }
-        else if(lexema=="Nivel" || lexema=="nivel")
+        else if((lexema.equals("Nivel"))||(lexema.equals("nivel")))
         {
             tipo_token="Token_Nivel";
         }
-        else if(lexema=="Facil" || lexema=="facil")
+        else if((lexema.equals("Facil"))||(lexema.equals("facil")))
         {
             tipo_token="Token_Facil";
         }
-        else if(lexema=="Intermedio" || lexema=="intermedio")
+        else if((lexema.equals("Intermedio"))||(lexema.equals("intermedio")))
         {
             tipo_token="Token_Intermedio";
         }
-        else if(lexema=="Dificil" || lexema=="dificil")
+        else if((lexema.equals("Dificil"))||(lexema.equals("dificil")))
         {
             tipo_token="Token_Dificil";
         }
-        else if(lexema=="Tiempo" || lexema=="tiempo")
+        else if((lexema.equals("Tiempo"))||(lexema.equals("Tiempo")))
         {
             tipo_token="Token_Tiempo";
         }
-        else if(lexema=="Usuarios" || lexema=="usuarios")
+        else if((lexema.equals("Usuarios"))||(lexema.equals("usuarios")))
         {
             tipo_token="Token_Usuarios";
         }
-        else if(lexema=="Nombre" || lexema=="nombre")
+        else if((lexema.equals("Nombre"))||(lexema.equals("nombre")))
         {
             tipo_token="Token_Nombre";
         }
-        else if(lexema=="Sonido" || lexema=="sonido")
+        else if((lexema.equals("Sonido"))||(lexema.equals("sonido")))
         {
             tipo_token="Token_Sonido";
         }
-        else if(lexema=="Track_1" || lexema=="track_1")
+        else if((lexema.equals("Track_1"))||(lexema.equals("track_1")))
         {
             tipo_token="Token_Track";
         }
-        else if(lexema=="Imagen" || lexema=="imagen")
+        else if((lexema.equals("Imagen"))||(lexema.equals("imagen")))
         {
             tipo_token="Token_Imagen";
         }
-        else if(lexema=="Idioma" || lexema=="idioma")
+        else if((lexema.equals("Idioma"))||(lexema.equals("idioma")))
         {
             tipo_token="Token_Idioma";
         }
-        else if(lexema=="Palabra" || lexema=="palabra")
+        else if((lexema.equals("Palabra"))||(lexema.equals("palabra")))
         {
             tipo_token="Token_Palabra";
         }
-        else if(lexema=="Carta" || lexema=="carta")
+        else if((lexema.equals("Carta"))||(lexema.equals("carta")))
         {
             tipo_token="Token_Carta";
         }
-        else if(lexema=="End-Configuracion" || lexema=="end-configuracion")
+        else if((lexema.equals("End-Configuracion"))||(lexema.equals("end-onfiguracion")))
         {
             tipo_token="Token_End-Configuracion";
         }
-        else if(lexema=="End-Nivel" || lexema=="end-nivel")
+        else if((lexema.equals("End-Nivel"))||(lexema.equals("end-nivel")))
         {
             tipo_token="Token_End-Nivel";
         }
-        else if(lexema=="End-Tiempo" || lexema=="end-tiempo")
+        else if((lexema.equals("End-Tiempo"))||(lexema.equals("end-tiempo")))
         {
             tipo_token="Token_End-Tiempo";
         }
-        else if(lexema=="End-Juego" || lexema=="end-juego")
+        else if((lexema.equals("End-Juego"))||(lexema.equals("end-juego")))
         {
             tipo_token="Token_End-Juego";
         }
-        else if(lexema=="End-Usuarios" || lexema=="end-usuarios")
+        else if((lexema.equals("End-Usuarios"))||(lexema.equals("end-usuarios")))
         {
             tipo_token="Token_End-Usuarios";
         }
-        else if(lexema=="End-Sonido" || lexema=="end-sonido")
+        else if((lexema.equals("End-Sonido"))||(lexema.equals("end-sonido")))
         {
             tipo_token="Token_End-Sonido";
         }
-        else if(lexema=="End-Carta" || lexema=="end-carta")
+        else if((lexema.equals("End-Carta"))||(lexema.equals("end-carta")))
         {
             tipo_token="Token_End-Carta";
         }
-        else if(lexema=="End-Nivel" || lexema=="end-nivel")
-        {
-            tipo_token="Token_End-Nivel";
-        }
+        
         else if(lexema=="->")
         {
             tipo_token="Token_->";
