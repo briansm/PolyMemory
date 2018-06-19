@@ -31,7 +31,7 @@ public class Analizador_Lexico {
 
     //-----------------Inicio--------------------------
     public void lexico(String entrada) {
-       // entrada += " ";
+       entrada += " ";
         char[] caracter = entrada.toCharArray();
         //----------loop que recorre el arreglo--------------------
         for (int i = 0; i < caracter.length; i++) {
@@ -77,9 +77,11 @@ public class Analizador_Lexico {
                     } else if (caracter[i] == 34) {
                         estado = 4;
                         lexema += caracter[i];
+                    } else if ((caracter[i] == 32) || (caracter[i] == 10)|| (caracter[i] == 9)) {
                     } else {
+                        
                         numer++;
-                        arregloError.add(new Datos(numer, lexema, fila, columna));
+                        arregloError.add(new Datos(numer, lexema+=caracter[i], fila, columna));
                         lexema = "";
                         estado = 0;
                     }
@@ -121,11 +123,6 @@ public class Analizador_Lexico {
                         estado = 0;
                         i--;
                     }
-//                    else
-//                    {
-//                        lexema+=caracter[i];
-//                        estado=100;
-//                    }
 
                     break;
                 //----------#Estado 3-------------------------
