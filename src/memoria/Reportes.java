@@ -133,7 +133,6 @@ public class Reportes {
             }
                 for(int i=0;i<lise.size();i++) {
                     html1+="<tr>\n"
-                            +"<td>"+(i+1)+"</td>\n"
                             +"<td>"+((Datos)lise.get(i)).getNumero()+"</td>\n"
                             +"<td>"+((Datos)lise.get(i)).getError()+"</td>\n"
                             +"<td>"+((Datos)lise.get(i)).getFila()+"</td>\n"

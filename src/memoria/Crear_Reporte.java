@@ -19,8 +19,8 @@ public class Crear_Reporte {
             nombreArchivo="C:\\Users\\Dell E5420\\Documents\\Errores.html";
         }
         archivo = new File(nombreArchivo);
-        try(FileWriter fw = new FileWriter(archivo)){
-            fw.write(codigoHTML);
+        try(FileWriter escritura = new FileWriter(archivo)){
+            escritura.write(codigoHTML);
             System.out.println("sdkflkasmdlkf");
         }catch(IOException e){
             e.printStackTrace();

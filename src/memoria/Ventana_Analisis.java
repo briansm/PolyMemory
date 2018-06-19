@@ -96,14 +96,16 @@ public class Ventana_Analisis extends javax.swing.JFrame {
     private void btn_analizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_analizarActionPerformed
         String entrada=Area_editor.getText();
         analisis.lexico(entrada);
+        reportes.CrearRT(analisis.getArrT());
+        reportes.CrearRE(analisis.getArrE());
     }//GEN-LAST:event_btn_analizarActionPerformed
 
     private void btn_simbolosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simbolosActionPerformed
-        reportes.CrearRT(analisis.getArrT());
+        
     }//GEN-LAST:event_btn_simbolosActionPerformed
 
     private void btn_erroresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_erroresActionPerformed
-        reportes.CrearRE(analisis.getArrE());
+        
     }//GEN-LAST:event_btn_erroresActionPerformed
 
     /**
