@@ -5,6 +5,11 @@
  */
 package memoria;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 /**
  *
  * @author Dell E5420
@@ -101,11 +106,35 @@ public class Ventana_Analisis extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_analizarActionPerformed
 
     private void btn_simbolosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simbolosActionPerformed
-        
+        try {
+
+            Desktop.getDesktop().browse(new URI("file:///C:/Users/Dell%20E5420/Documents/Simbolos.html"));
+
+        } catch (URISyntaxException ex) {
+
+            System.out.println(ex);
+
+        }catch(IOException e){
+
+            System.out.println(e);
+
+        }
     }//GEN-LAST:event_btn_simbolosActionPerformed
 
     private void btn_erroresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_erroresActionPerformed
-        
+        try {
+
+            Desktop.getDesktop().browse(new URI("file:///C:/Users/Dell%20E5420/Documents/Errores.html"));
+
+        } catch (URISyntaxException ex) {
+
+            System.out.println(ex);
+
+        }catch(IOException e){
+
+            System.out.println(e);
+
+        }
     }//GEN-LAST:event_btn_erroresActionPerformed
 
     /**
