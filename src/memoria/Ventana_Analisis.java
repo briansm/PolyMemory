@@ -6,18 +6,27 @@
 package memoria;
 
 import java.awt.Desktop;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Dell E5420
  */
 public class Ventana_Analisis extends javax.swing.JFrame {
-
+    public boolean opcion=true;
     Analizador_Lexico analisis=new Analizador_Lexico();
     Reportes reportes= new Reportes();
+    Crear_Reporte cr=new Crear_Reporte();
+    
+    JFileChooser selec=new JFileChooser();
+    File archiv;
+    Abrir_Archivo marchi=new Abrir_Archivo();
+    
     public Ventana_Analisis() {
         initComponents();
     }
@@ -43,7 +52,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
         Area_editor.setRows(5);
         jScrollPane1.setViewportView(Area_editor);
 
-        btn_analizar.setText("Analizar");
+        btn_analizar.setText("Abrir");
         btn_analizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_analizarActionPerformed(evt);
@@ -99,10 +108,34 @@ public class Ventana_Analisis extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_analizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_analizarActionPerformed
-        String entrada=Area_editor.getText();
-        analisis.lexico(entrada);
-        reportes.CrearRT(analisis.getArrT());
-        reportes.CrearRE(analisis.getArrE());
+        if(opcion){
+           
+           if (selec.showDialog(this, "Abrir archivo")== JFileChooser.APPROVE_OPTION){
+                 archiv=selec.getSelectedFile();
+                if(archiv.getName().endsWith("lfp")){
+                    String contenido=marchi.Abrir(archiv);
+                    Area_editor.setText(contenido);
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "NO es un archivo .lfp");
+                }
+             
+            }
+           opcion=false;
+           btn_analizar.setText("Analizar");
+           }else{
+                String entrada=Area_editor.getText();
+                analisis.lexico(entrada);
+                reportes.CrearRT(analisis.getArrT());
+                reportes.CrearRE(analisis.getArrE());
+                opcion=true;
+                btn_analizar.setText("Analizar");
+        }
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_btn_analizarActionPerformed
 
     private void btn_simbolosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simbolosActionPerformed

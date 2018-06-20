@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 
 
 public class Reportes {
+    String html=" ";
     //------Declaracion de listas-----------------------
     ArrayList<Datos>list;
     ArrayList<Datos>lise;
@@ -15,7 +16,7 @@ public class Reportes {
         list=lista;
         
         //------------------HTML-----------------------------------------------  
-        String html = "<html>\n"
+             html = "<html>\n"
                  +"<head>\n"
                 +"<style type=\"text/css\">\n" //_____________________________style de css__________________________________________
                 +"table {\n" +
@@ -80,6 +81,8 @@ public class Reportes {
             //---------------------FIN HTML-----------------------------------------
       //------Falta generar archivo------     
             crearR.guardarReporte(html, "Simbolos");
+            
+            
     }
     //-------------------------------Metodo para reporte errores---------------------
     public void CrearRE(ArrayList lista){

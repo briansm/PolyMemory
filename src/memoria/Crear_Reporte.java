@@ -11,6 +11,7 @@ public class Crear_Reporte {
     
     
     public void guardarReporte(String codigoHTML, String tipoReporte){
+        
         String nombreArchivo = "";
         if(tipoReporte == "Simbolos"){
             nombreArchivo="C:\\Users\\Dell E5420\\Documents\\Simbolos.html";

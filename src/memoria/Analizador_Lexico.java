@@ -77,7 +77,7 @@ public class Analizador_Lexico {
                     } else if (caracter[i] == 34) {
                         estado = 4;
                         lexema += caracter[i];
-                    } else if ((caracter[i] == 32) || (caracter[i] == 10)|| (caracter[i] == 9)) {
+                    } else if ((caracter[i] >=1) && (caracter[i] <= 32)) {
                     } else {
                         
                         numer++;
