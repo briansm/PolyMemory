@@ -10,8 +10,12 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -29,6 +33,12 @@ public class Ventana_Analisis extends javax.swing.JFrame {
     
     public Ventana_Analisis() {
         initComponents();
+        ((JPanel)getContentPane()).setOpaque(false);
+        ImageIcon fondo=new ImageIcon(this.getClass().getResource("/Imagenes/img_1.jpg"));
+        JLabel fon=new JLabel();
+        fon.setIcon(fondo);
+        getLayeredPane().add(fon,JLayeredPane.FRAME_CONTENT_LAYER);
+        fon.setBounds(0,0,fondo.getIconWidth() , fondo.getIconHeight());
     }
 
     /**
