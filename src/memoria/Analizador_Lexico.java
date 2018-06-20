@@ -155,8 +155,10 @@ public class Analizador_Lexico {
                         estado = 10;
                         lexema += caracter[i];
                     } else {
-                        lexema += caracter[i];
-                        estado = 100;
+                        numer++;
+                        arregloError.add(new Datos(numer, lexema, fila, columna));
+                        lexema = "";
+                        estado = 0;
                     }
                     break;
                 //------------#Estado 6---------------------
@@ -219,7 +221,7 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         numer++;
-                        arregloError.add(new Datos(numer, lexema, fila, columna));
+                        arregloError.add(new Datos(numer, lexema+=caracter[i], fila, columna));
                         lexema = "";
                         estado = 0;
                     }
@@ -280,7 +282,7 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         numer++;
-                        arregloError.add(new Datos(numer, lexema, fila, columna));
+                        arregloError.add(new Datos(numer, lexema+=caracter[i], fila, columna));
                         lexema = "";
                         estado = 0;
                     }
@@ -293,7 +295,7 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         numer++;
-                        arregloError.add(new Datos(numer, lexema, fila, columna));
+                        arregloError.add(new Datos(numer, lexema+=caracter[i], fila, columna));
                         lexema = "";
                         estado = 0;
                     }
@@ -312,7 +314,7 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         numer++;
-                        arregloError.add(new Datos(numer, lexema, fila, columna));
+                        arregloError.add(new Datos(numer, lexema+=caracter[i], fila, columna));
                         lexema = "";
                         estado = 0;
                     }
@@ -325,7 +327,7 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         numer++;
-                        arregloError.add(new Datos(numer, lexema, fila, columna));
+                        arregloError.add(new Datos(numer, lexema+=caracter[i], fila, columna));
                         lexema = "";
                         estado = 0;
                     }
