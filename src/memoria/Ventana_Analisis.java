@@ -139,6 +139,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
                 reportes.CrearRE(analisis.getArrE());
                 opcion=true;
                 btn_analizar.setText("Analizar");
+                JOptionPane.showMessageDialog(rootPane, "Analisis Exitoso");
         }
         
         
