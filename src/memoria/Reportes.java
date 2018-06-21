@@ -48,7 +48,7 @@ public class Reportes {
                 +"<meta charset=\"UTF-8\">\n"
                 +"<title>Reporte tokens</title>\n"
                 +"</head\n>"
-                +"<body background=\"\\Reportes\\r3.jpg\">"
+                +"<body background=\"\\Imagenes\\r2.jpg\">"
                 +"<font color=\"Olive\" face=\"Comic Sans MS,arial\">"
                 +"<h3>Lista de tokens</h3>"
                 +"</font>"
@@ -120,7 +120,7 @@ public class Reportes {
                 +"<meta charset=\"UTF-8\">\n"
                 +"<title>Reporte errores</title>\n"
                 +"</head\n>"
-                +"<body background=\"\\Reportes\\r3.jpg\">"
+                +"<body background=\"\\Imagenes\\r2.jpg\">"
                 +"<font color=\"Olive\" face=\"Comic Sans MS,arial\">"
                 +"<h3>Lista de errores</h3>"
                 +"</font>"
@@ -138,7 +138,7 @@ public class Reportes {
             }
                 for(int i=0;i<lise.size();i++) {
                     html1+="<tr>\n"
-                            +"<td>"+((Datos)lise.get(i)).getNumero()+"</td>\n"
+                            +"<td>"+(i+1)+"</td>\n"
                             +"<td>"+((Datos)lise.get(i)).getError()+"</td>\n"
                             +"<td>"+((Datos)lise.get(i)).getFila()+"</td>\n"
                             +"<td>"+((Datos)lise.get(i)).getColum()+"</td>\n"
