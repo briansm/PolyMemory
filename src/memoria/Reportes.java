@@ -11,6 +11,7 @@ public class Reportes {
     ArrayList<Datos>list;
     ArrayList<Datos>lise;
     Crear_Reporte crearR=new Crear_Reporte();
+    
     //---------Metodo para Reporte Tokens---------------
     public void CrearRT(ArrayList lista){
         list=lista;
@@ -81,6 +82,7 @@ public class Reportes {
             //---------------------FIN HTML-----------------------------------------
       //------Falta generar archivo------     
             crearR.guardarReporte(html, "Simbolos");
+            list.clear();
             
             
     }
@@ -150,6 +152,7 @@ public class Reportes {
            //---------------------FIN HTML-----------------------------------------
       //------Falta generar archivo------  
            crearR.guardarReporte(html1, "Error");
+           lise.clear();
     }
     
 }

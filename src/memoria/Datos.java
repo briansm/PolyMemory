@@ -5,7 +5,7 @@ package memoria;
 public class Datos {
     
     //-------Declaracion de variables--------
-    int numero;
+        int numero;
         int fila = 1;
         int columna;
 

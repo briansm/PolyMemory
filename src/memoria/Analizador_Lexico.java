@@ -382,7 +382,7 @@ public class Analizador_Lexico {
             //---------FIN ANALISIS-----------------------
         }
         //------------FIN LOOP----------------------
-
+        num=0;
     }
 
     //--------Metodo Para Reconocer Tokens----------------------------
