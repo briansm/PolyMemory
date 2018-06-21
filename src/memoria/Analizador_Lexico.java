@@ -270,7 +270,7 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         numer++;
-                        arregloError.add(new Datos(numer, lexema, fila, columna));
+                        arregloError.add(new Datos(numer, lexema+=caracter[i], fila, columna));
                         lexema = "";
                         estado = 0;
                     }
@@ -413,6 +413,10 @@ public class Analizador_Lexico {
         } else if ((lexema.equals("Sonido")) || (lexema.equals("sonido"))) {
             tipo_token = "Token_Sonido";
         } else if ((lexema.equals("Track_1")) || (lexema.equals("track_1"))) {
+            tipo_token = "Token_Track";
+        } else if ((lexema.equals("Track_2")) || (lexema.equals("track_2"))) {
+            tipo_token = "Token_Track";
+        } else if ((lexema.equals("Track_3")) || (lexema.equals("track_3"))) {
             tipo_token = "Token_Track";
         } else if ((lexema.equals("Imagen")) || (lexema.equals("imagen"))) {
             tipo_token = "Token_Imagen";
