@@ -8,7 +8,7 @@ public class Analizador_Lexico {
     int num = 0;
     int numer = 0;
     int fila = 1;
-    int columna = 0;
+    int columna = -1;
     String lexema = "";
     public ArrayList<Datos> arregloToken = new ArrayList<Datos>();
     public ArrayList<Datos> arregloError = new ArrayList<Datos>();
@@ -39,15 +39,16 @@ public class Analizador_Lexico {
             switch (caracter[i]) {
                 case 10:
                     fila++;
-                    columna = 0;
+                    columna = -1;
                     break;
                 case 9:
                     columna+=5;
                     break;
                 case 32:
-                    columna++;
+                    //columna++;
                     break;
                 default:
+                    columna++;
                     break;
             }
             //-------------Inicio_Analisis------------------------------
@@ -383,6 +384,8 @@ public class Analizador_Lexico {
         }
         //------------FIN LOOP----------------------
         num=0;
+        fila=1;
+        columna=-1;
     }
 
     //--------Metodo Para Reconocer Tokens----------------------------
