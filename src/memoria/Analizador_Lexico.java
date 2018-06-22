@@ -389,9 +389,9 @@ public class Analizador_Lexico {
     }
 
     //--------Metodo Para Reconocer Tokens----------------------------
-    public String tipoT(String lexema) {
+    public String tipoT(String lexe) {
         String tipo_token = " ";
-
+        String lexema=lexe.toLowerCase();
         if ((lexema.equals("Configuracion")) || (lexema.equals("configuracion"))) {
             tipo_token = "Token_Configuracion";
         } else if ((lexema.equals("Juego")) || (lexema.equals("juego"))) {
@@ -404,7 +404,7 @@ public class Analizador_Lexico {
             tipo_token = "Token_Intermedio";
         } else if ((lexema.equals("Dificil")) || (lexema.equals("dificil"))) {
             tipo_token = "Token_Dificil";
-        } else if ((lexema.equals("Tiempo")) || (lexema.equals("Tiempo"))) {
+        } else if ((lexema.equals("Tiempo")) || (lexema.equals("tiempo"))) {
             tipo_token = "Token_Tiempo";
         } else if ((lexema.equals("Usuarios")) || (lexema.equals("usuarios"))) {
             tipo_token = "Token_Usuarios";
