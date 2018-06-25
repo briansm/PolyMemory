@@ -389,61 +389,109 @@ public class Analizador_Lexico {
     }
 
     //--------Metodo Para Reconocer Tokens----------------------------
-    public String tipoT(String lexe) {
+    public String tipoT(String lexema) {
         String tipo_token = " ";
-        String lexema=lexe.toLowerCase();
-        if ((lexema.equals("Configuracion")) || (lexema.equals("configuracion"))) {
-            tipo_token = "Token_Configuracion";
-        } else if ((lexema.equals("Juego")) || (lexema.equals("juego"))) {
-            tipo_token = "Token_Juego";
-        } else if ((lexema.equals("Nivel")) || (lexema.equals("nivel"))) {
-            tipo_token = "Token_Nivel";
-        } else if ((lexema.equals("Facil")) || (lexema.equals("facil"))) {
-            tipo_token = "Token_Facil";
-        } else if ((lexema.equals("Intermedio")) || (lexema.equals("intermedio"))) {
-            tipo_token = "Token_Intermedio";
-        } else if ((lexema.equals("Dificil")) || (lexema.equals("dificil"))) {
-            tipo_token = "Token_Dificil";
-        } else if ((lexema.equals("Tiempo")) || (lexema.equals("tiempo"))) {
-            tipo_token = "Token_Tiempo";
-        } else if ((lexema.equals("Usuarios")) || (lexema.equals("usuarios"))) {
-            tipo_token = "Token_Usuarios";
-        } else if ((lexema.equals("Nombre")) || (lexema.equals("nombre"))) {
-            tipo_token = "Token_Nombre";
-        } else if ((lexema.equals("Sonido")) || (lexema.equals("sonido"))) {
-            tipo_token = "Token_Sonido";
-        } else if ((lexema.equals("Track_1")) || (lexema.equals("track_1"))) {
-            tipo_token = "Token_Track";
-        } else if ((lexema.equals("Track_2")) || (lexema.equals("track_2"))) {
-            tipo_token = "Token_Track";
-        } else if ((lexema.equals("Track_3")) || (lexema.equals("track_3"))) {
-            tipo_token = "Token_Track";
-        } else if ((lexema.equals("Imagen")) || (lexema.equals("imagen"))) {
-            tipo_token = "Token_Imagen";
-        } else if ((lexema.equals("Idioma")) || (lexema.equals("idioma"))) {
-            tipo_token = "Token_Idioma";
-        } else if ((lexema.equals("Palabra")) || (lexema.equals("palabra"))) {
-            tipo_token = "Token_Palabra";
-        } else if ((lexema.equals("Carta")) || (lexema.equals("carta"))) {
-            tipo_token = "Token_Carta";
-        } else if ((lexema.equals("End-Configuracion")) || (lexema.equals("end-configuracion"))) {
-            tipo_token = "Token_End-Configuracion";
-        } else if ((lexema.equals("End-Nivel")) || (lexema.equals("end-nivel"))) {
-            tipo_token = "Token_End-Nivel";
-        } else if ((lexema.equals("End-Tiempo")) || (lexema.equals("end-tiempo"))) {
-            tipo_token = "Token_End-Tiempo";
-        } else if ((lexema.equals("End-Juego")) || (lexema.equals("end-juego"))) {
-            tipo_token = "Token_End-Juego";
-        } else if ((lexema.equals("End-Usuarios")) || (lexema.equals("end-usuarios"))) {
-            tipo_token = "Token_End-Usuarios";
-        } else if ((lexema.equals("End-Sonido")) || (lexema.equals("end-sonido"))) {
-            tipo_token = "Token_End-Sonido";
-        } else if ((lexema.equals("End-Carta")) || (lexema.equals("end-carta"))) {
-            tipo_token = "Token_End-Carta";
-        } else if (lexema == "->") {
-            tipo_token = "Token_->";
-        } else {
-            tipo_token = "Token_Id";
+        String lexem=lexema.toLowerCase();
+        switch (lexem) {
+            case "configuracion":
+                tipo_token = "Token_Configuracion";
+                break;
+            
+            case "juego":
+                tipo_token = "Token_Juego";
+                break;
+            
+            case "nivel":
+                tipo_token = "Token_Nivel";
+                break;
+            
+            case "facil":
+                tipo_token = "Token_Facil";
+                break;
+            
+            case "intermedio":
+                tipo_token = "Token_Intermedio";
+                break;
+            
+            case "dificil":
+                tipo_token = "Token_Dificil";
+                break;
+            
+            case "tiempo":
+                tipo_token = "Token_Tiempo";
+                break;
+            
+            case "usuarios":
+                tipo_token = "Token_Usuarios";
+                break;
+            
+            case "nombre":
+                tipo_token = "Token_Nombre";
+                break;
+            
+            case "sonido":
+                tipo_token = "Token_Sonido";
+                break;
+            
+            case "track_1":
+                tipo_token = "Token_Track";
+                break;
+            
+            case "track_2":
+                tipo_token = "Token_Track";
+                break;
+            
+            case "track_3":
+                tipo_token = "Token_Track";
+                break;
+            
+            case "imagen":
+                tipo_token = "Token_Imagen";
+                break;
+            
+            case "idioma":
+                tipo_token = "Token_Idioma";
+                break;
+            
+            case "palabra":
+                tipo_token = "Token_Palabra";
+                break;
+            
+            case "carta":
+                tipo_token = "Token_Carta";
+                break;
+            
+            case "end-configuracion":
+                tipo_token = "Token_End-Configuracion";
+                break;
+            
+            case "end-nivel":
+                tipo_token = "Token_End-Nivel";
+                break;
+            
+            case "end-tiempo":
+                tipo_token = "Token_End-Tiempo";
+                break;
+            
+            case "end-juego":
+                tipo_token = "Token_End-Juego";
+                break;
+            
+            case "end-usuarios":
+                tipo_token = "Token_End-Usuarios";
+                break;
+            
+            case "end-sonido":
+                tipo_token = "Token_End-Sonido";
+                break;
+            
+            case "end-carta":
+                tipo_token = "Token_End-Carta";
+                break;
+            
+            default:
+                tipo_token = "Token_Id";
+                break;
         }
         return tipo_token;
     }
