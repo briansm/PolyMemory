@@ -249,7 +249,7 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         num++;
-                        arregloToken.add(new Datos(num, lexema, "Token_Digito", fila, columna));
+                        arregloToken.add(new Datos(num, lexema, "Token_Decimal", fila, columna));
                         lexema = "";
                         estado = 0;
                         i--;
@@ -390,7 +390,7 @@ public class Analizador_Lexico {
 
     //--------Metodo Para Reconocer Tokens----------------------------
     public String tipoT(String lexema) {
-        String tipo_token = " ";
+        String tipo_token;
         String lexem=lexema.toLowerCase();
         switch (lexem) {
             case "configuracion":
