@@ -76,7 +76,7 @@ public class Analizador_Lexico {
                         estado = 21;
                         lexema += caracter[i];
                     } else if (caracter[i] == 34) {
-                        estado = 4;
+                        estado = 22;
                         lexema += caracter[i];
                     } else if ((caracter[i] >=1) && (caracter[i] <= 32)) {
                     } else {
@@ -362,10 +362,18 @@ public class Analizador_Lexico {
                     estado = 0;
                     i--;
                     break;
-                //------------#Estado 19---------------------
+                //------------#Estado 21---------------------
                 case 21:
                     num++;
                     arregloToken.add(new Datos(num, lexema, "Token_]", fila, columna));
+                    lexema = "";
+                    estado = 0;
+                    i--;
+                    break;
+                //------------#Estado 22---------------------
+                case 22:
+                    num++;
+                    arregloToken.add(new Datos(num, lexema, "Token_Comillas", fila, columna));
                     lexema = "";
                     estado = 0;
                     i--;
