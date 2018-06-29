@@ -13,6 +13,5 @@ public class Tokens {
         
         public  String getTok(){
             return token;
-        
         }
 }

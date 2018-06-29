@@ -12,6 +12,8 @@ public class Analizador_Lexico {
     String lexema = "";
     public ArrayList<Datos> arregloToken = new ArrayList<Datos>();
     public ArrayList<Datos> arregloError = new ArrayList<Datos>();
+    
+    public ArrayList<Tokens> listaTok=new ArrayList<Tokens>();
 
     public ArrayList<Datos> getArrT() {
         return arregloToken;
@@ -101,6 +103,7 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         num++;
+                        listaTok.add(new Tokens(tipoT(lexema)));
                         arregloToken.add(new Datos(num, lexema, tipoT(lexema), fila, columna));
                         lexema = "";
                         estado = 0;
@@ -119,6 +122,7 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         num++;
+                        listaTok.add(new Tokens("Token_Digito"));
                         arregloToken.add(new Datos(num, lexema, "Token_Digito", fila, columna));
                         lexema = "";
                         estado = 0;
@@ -135,6 +139,7 @@ public class Analizador_Lexico {
                     else 
                     {
                         num++;
+                        listaTok.add(new Tokens("Token_Simbolo"));
                         arregloToken.add(new Datos(num, lexema, "Token_Simbolo", fila, columna));
                         lexema = "";
                         estado = 0;
@@ -145,6 +150,7 @@ public class Analizador_Lexico {
                 //------------#Estado 4---------------------
                 case 4:
                     num++;
+                    listaTok.add(new Tokens("TOken_Simbolo"));
                     arregloToken.add(new Datos(num, lexema, "Token_Simbolo", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -173,6 +179,7 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         num++;
+                        listaTok.add(new Tokens(tipoT(lexema)));
                         arregloToken.add(new Datos(num, lexema, tipoT(lexema), fila, columna));
                         lexema = "";
                         estado = 0;
@@ -209,6 +216,7 @@ public class Analizador_Lexico {
                 //------------#Estado 9---------------------
                 case 9:
                     num++;
+                    listaTok.add(new Tokens("Token_->"));
                     arregloToken.add(new Datos(num, lexema, "Token_->", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -235,6 +243,7 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         num++;
+                        listaTok.add(new Tokens( tipoT(lexema)));
                         arregloToken.add(new Datos(num, lexema, tipoT(lexema), fila, columna));
                         lexema = "";
                         estado = 0;
@@ -249,6 +258,7 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         num++;
+                        listaTok.add(new Tokens("Token_Decimal"));
                         arregloToken.add(new Datos(num, lexema, "Token_Decimal", fila, columna));
                         lexema = "";
                         estado = 0;
@@ -357,6 +367,7 @@ public class Analizador_Lexico {
                 //------------#Estado 20---------------------
                 case 20:
                     num++;
+                    listaTok.add(new Tokens("Token_["));
                     arregloToken.add(new Datos(num, lexema, "Token_[", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -365,6 +376,7 @@ public class Analizador_Lexico {
                 //------------#Estado 21---------------------
                 case 21:
                     num++;
+                    listaTok.add(new Tokens("Token_]"));
                     arregloToken.add(new Datos(num, lexema, "Token_]", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -373,6 +385,7 @@ public class Analizador_Lexico {
                 //------------#Estado 22---------------------
                 case 22:
                     num++;
+                    listaTok.add(new Tokens("Token_Comillas"));
                     arregloToken.add(new Datos(num, lexema, "Token_Comillas", fila, columna));
                     lexema = "";
                     estado = 0;
