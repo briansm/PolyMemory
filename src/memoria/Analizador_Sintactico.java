@@ -374,7 +374,135 @@ public class Analizador_Sintactico {
             if(!p.equals(valor.getTok())){
                 System.out.println("Se esperaba...");
             }
-            recorrido+=1;
-            valor= listT.get(recorrido);
+            
+            if (!listT.isEmpty()) {
+                 System.out.println(listT.get(listT.size()-1));
+                }
+
+                recorrido+=1;
+                valor= listT.get(recorrido);
+            
+            
             }
+        
+        
+        public String tipoE(String p){
+            switch(p){
+                case "Token_Configuracion":
+                    return "Token_Configuracion";
+                case "Token_Juego":
+                    return "Token_Juego";
+                case "Token_Nivel":
+                    return "Token_Nivel";
+                case "Token_Facil":
+                    return "Token_Facil";
+                case "Token_Intermedio":
+                    return "Token_Intermedio";
+                case "Token_Dificil":
+                    return "Token_Dificil";
+                case "Token_Tiempo":
+                    return "Token_Tiempo";
+                case "Token_Usuarios":
+                    return "Token_Usuarios";
+                case "Token_Nombre":
+                    return "Token_Nombre";
+                case "Token_Sonido":
+                    return "Token_Sonido";
+                case "Token_Track":
+                    return "Token_Track";
+                case "Token_Imagen":
+                    return "Token_Imagen";
+                case "Token_Idioma":
+                    return "Token_Idioma";
+                case "Token_Palabra":
+                    return "Token_Palabra";
+                case "Token_Carta":
+                    return "Token_Carta";
+                case "Token_End-Configuracion":
+                    return "Token_End-Configuracion";
+                case "Token_End-Nivel":
+                    return "Token_End-Nivel";
+                case "Token_End-Tiempo":
+                    return "Token_End-Tiempo";
+                case "Token_End-Juego":
+                    return "Token_End-Juego";
+                case "Token_End-Usuarios":
+                    return "Token_End-Usuarios";
+                case "Token_End-Sonido":
+                    return "Token_End-Sonido";
+                case "Token_End-Carta":
+                    return "Token_End-Carta";
+                case "Token_Comillas":
+                    return "Token_Comillas";
+                case "Token_Digito":
+                    return "Token_Digito";
+                case "Token_Decimal":
+                    return "Token_Decimal";
+                case "Token_+":
+                    return "Token_+";
+                case "Token_-":
+                    return "Token_-";
+                case "Token_*":
+                    return "Token_*";
+                case "Token_/":
+                    return "Token_/"; 
+                case "Token_->":
+                    return "Token_->";
+                case "Token_]":
+                    return "Token_]";
+                case "Token_[":
+                    return "Token_[";
+                case "Token_#":
+                    return "Token_#"; 
+                case "Token_Id":    
+                    return  "Token_Id";
+                default:
+                return  "Desconocido";
+                
+        
+        
+        }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+        
+        }
 }
