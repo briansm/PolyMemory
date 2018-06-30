@@ -26,6 +26,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
     Analizador_Lexico analisis=new Analizador_Lexico();
     Reportes reportes= new Reportes();
     Crear_Reporte cr=new Crear_Reporte();
+    Analizador_Sintactico sint=new Analizador_Sintactico();
     
     JFileChooser selec=new JFileChooser();
     File archiv;
@@ -55,6 +56,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
         btn_analizar = new javax.swing.JButton();
         btn_simbolos = new javax.swing.JButton();
         btn_errores = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +85,13 @@ public class Ventana_Analisis extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,10 +100,12 @@ public class Ventana_Analisis extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_simbolos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_analizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_errores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btn_simbolos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_analizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_errores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton1))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -110,7 +121,9 @@ public class Ventana_Analisis extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(btn_simbolos)
                         .addGap(41, 41, 41)
-                        .addComponent(btn_errores)))
+                        .addComponent(btn_errores)
+                        .addGap(48, 48, 48)
+                        .addComponent(jButton1)))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
 
@@ -181,6 +194,10 @@ public class Ventana_Analisis extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_erroresActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       sint.Sintactico(analisis.getT());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -221,6 +238,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
     private javax.swing.JButton btn_analizar;
     private javax.swing.JButton btn_errores;
     private javax.swing.JButton btn_simbolos;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

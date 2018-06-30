@@ -363,6 +363,7 @@ public class Analizador_Lexico {
                 //------------#Estado 19---------------------
                 case 19:
                     num++;
+                    listaTok.add(new Tokens("Token_Ruta"));
                     arregloToken.add(new Datos(num, lexema, "Token_Ruta", fila, columna));
                     lexema = "";
                     estado = 0;

@@ -15,11 +15,15 @@ public class Analizador_Sintactico {
             recorrido=0;
             valor=listT.get(0);
             Inicio();
+            for(int x=0;x<listT.size();x++) {
+                System.out.println(((Tokens)listT.get(x)).getTok());
+            }
         }
     
     
         public void Inicio(){
             if(valor.getTok().equals("Token_[")){
+                System.out.println("Si Reconoce");
                 parea("Token_[");
                 parea("Token_Configuracion");
                 parea("Token_]");
@@ -33,8 +37,18 @@ public class Analizador_Sintactico {
         }
     
         public void InicioP(){
-    
-    
+            if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                parea("Token_Configuracion");
+                parea("Token_]");
+                Modul();
+                parea("Token_[");
+                parea("Token_End-Configuracion");
+                parea("Token_]");
+                InicioP();
+            }
+            //InicioP-> EPSILON
+            //Nada
         }
         
         public void Modul(){
