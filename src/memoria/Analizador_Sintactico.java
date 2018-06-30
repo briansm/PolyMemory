@@ -372,18 +372,20 @@ public class Analizador_Sintactico {
         
         public void parea(String p){
             if(!p.equals(valor.getTok())){
-                System.out.println("Se esperaba...");
+                System.out.println("Se esperaba..."+tipoE(p));
             }
             
-            if (!listT.isEmpty()) {
-                 System.out.println(listT.get(listT.size()-1));
-                }
-
+            if (!valor.getTok().equals("Token_End-Configuracion")){
                 recorrido+=1;
                 valor= listT.get(recorrido);
+            } 
+            
+        }
+
+                
             
             
-            }
+            
         
         
         public String tipoE(String p){

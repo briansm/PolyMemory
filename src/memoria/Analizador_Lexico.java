@@ -72,9 +72,15 @@ public class Analizador_Lexico {
                     } else if (caracter[i] == 45) {
                         estado = 3;
                         lexema += caracter[i];
-                    } else if (caracter[i] == 42 || caracter[i] == 43 || caracter[i] == 47) {
-                        estado = 4;
+                    } else if (caracter[i] == 43) {
+                        estado = 23;
                         lexema += caracter[i];
+                    } else if (caracter[i] == 42) {
+                        estado = 24;
+                        lexema += caracter[i]; 
+                    } else if (caracter[i] == 47) {
+                        estado = 25;
+                        lexema += caracter[i];     
                     } else if (caracter[i] == 91) {
                         estado = 20;
                         lexema += caracter[i];
@@ -84,6 +90,9 @@ public class Analizador_Lexico {
                     } else if (caracter[i] == 34) {
                         estado = 22;
                         lexema += caracter[i];
+                    } else if (caracter[i] == 35) {
+                        estado = 26;
+                        lexema += caracter[i];    
                     } else if ((caracter[i] >=1) && (caracter[i] <= 32)) {
                     } else {
                         
@@ -396,6 +405,42 @@ public class Analizador_Lexico {
                     estado = 0;
                     i--;
                     break;
+                //------------#Estado 23---------------------
+                case 23:
+                    num++;
+                    listaTok.add(new Tokens("Token_+"));
+                    arregloToken.add(new Datos(num, lexema, "Token_+", fila, columna));
+                    lexema = "";
+                    estado = 0;
+                    i--;
+                    break;  
+                 //------------#Estado 24---------------------
+                case 24:
+                    num++;
+                    listaTok.add(new Tokens("Token_*"));
+                    arregloToken.add(new Datos(num, lexema, "Token_*", fila, columna));
+                    lexema = "";
+                    estado = 0;
+                    i--;
+                    break;
+                //------------#Estado 25---------------------
+                case 25:
+                    num++;
+                    listaTok.add(new Tokens("Token_/"));
+                    arregloToken.add(new Datos(num, lexema, "Token_/", fila, columna));
+                    lexema = "";
+                    estado = 0;
+                    i--;
+                    break;
+                //------------#Estado 26---------------------
+                case 26:
+                    num++;
+                    listaTok.add(new Tokens("Token_#"));
+                    arregloToken.add(new Datos(num, lexema, "Token_#", fila, columna));
+                    lexema = "";
+                    estado = 0;
+                    i--;
+                    break;      
                 //------------Estado error---------------------
                /** case 100:
                     numer++;
