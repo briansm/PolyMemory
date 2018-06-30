@@ -14,7 +14,11 @@ public class Analizador_Lexico {
     public ArrayList<Datos> arregloError = new ArrayList<Datos>();
     
     public ArrayList<Tokens> listaTok=new ArrayList<Tokens>();
-
+    
+    public ArrayList<Tokens> getT() {
+        return listaTok;
+    }
+    
     public ArrayList<Datos> getArrT() {
         return arregloToken;
     }
