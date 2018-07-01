@@ -457,6 +457,7 @@ public class Analizador_Lexico {
         num=0;
         fila=1;
         columna=-1;
+        listaTok.add(new Tokens("Fin"));
     }
 
     //--------Metodo Para Reconocer Tokens----------------------------

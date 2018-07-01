@@ -23,14 +23,17 @@ public class Analizador_Sintactico {
     
         public void Inicio(){
             if(valor.getTok().equals("Token_[")){
-                System.out.println("Si Reconoce");
+                
                 parea("Token_[");
                 parea("Token_Configuracion");
                 parea("Token_]");
+                
                 Modul();
+                
                 parea("Token_[");
                 parea("Token_End-Configuracion");
                 parea("Token_]");
+                
                 InicioP();
             }
         
@@ -41,18 +44,23 @@ public class Analizador_Sintactico {
                 parea("Token_[");
                 parea("Token_Configuracion");
                 parea("Token_]");
+                
                 Modul();
+                
                 parea("Token_[");
                 parea("Token_End-Configuracion");
                 parea("Token_]");
+                
                 InicioP();
             }
             //InicioP-> EPSILON
             //Nada
         }
         
+        
         public void Modul(){
             if(valor.getTok().equals("Token_[")){
+                
                 parea("Token_[");
                 M();
                 parea("Token_]");
@@ -72,28 +80,22 @@ public class Analizador_Sintactico {
     
         }
         
-    /**  public void Sub(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                M();
-                parea("Token_]");
-            }
-    
-        }**/
         
         public void M(){
             if(valor.getTok().equals("Token_Juego")){
+                
                 parea("Token_Juego");
                 parea("Token_]");
+                
                 MJ();
                 parea("Token_[");
                 parea("Token_End-Juego");
-            }else if(valor.getTok().equals("Token_Usuario")){
-                parea("Token_Usuario");
+            }else if(valor.getTok().equals("Token_Usuarios")){
+                parea("Token_Usuarios");
                 parea("Token_]");
                 MU();
                 parea("Token_[");
-                parea("Token_End-Usuario");
+                parea("Token_End-Usuarios");
             }else if(valor.getTok().equals("Token_Sonido")){
                 parea("Token_Sonido");
                 parea("Token_]");
@@ -128,14 +130,6 @@ public class Analizador_Sintactico {
             }
         }
         
-      /**  public void Juego(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                JuegoP();
-                parea("Token_]");
-            }
-        } **/
-        
         public void JuegoP(){
             if(valor.getTok().equals("Token_Nivel")){
                 parea("Token_Nivel");
@@ -149,6 +143,7 @@ public class Analizador_Sintactico {
                 ST();
                 parea("Token_[");
                 parea("Token_End-Tiempo");
+                
             }
         }
         
@@ -171,15 +166,6 @@ public class Analizador_Sintactico {
             }
         }
         
-        
-        
-   /**     public void Nivel(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                NivelP();
-                parea("Token_]");
-            }
-        } **/
         
         public void NivelP(){
             if(valor.getTok().equals("Token_Facil")){
@@ -229,14 +215,7 @@ public class Analizador_Sintactico {
             }
         }
         
-     /**   public void Tiempo(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                TiempoP();
-                parea("Token_]");
-            }
-        
-        }**/
+     
         
         public void TiempoP(){
             if(valor.getTok().equals("Token_Facil")){
@@ -295,19 +274,7 @@ public class Analizador_Sintactico {
             }
         }
         
-     /**   public void Usuario(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                parea("Token_Nombre");
-                parea("Token_]");
-                parea("Token_->");
-                parea("Token_[");
-                parea("Token_Comillas");
-                parea("Token_Id");
-                parea("Token_Comillas");
-                parea("Token_]");
-            }
-        }**/
+     
         
         public void MS(){
             if(valor.getTok().equals("Token_[")){
@@ -340,20 +307,6 @@ public class Analizador_Sintactico {
             }
         }
         
-     /**   public void Sonido(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                parea("Token_Track");
-                parea("Token_]");
-                parea("Token_->");
-                parea("Token_[");
-                parea("Token_Comillas");
-                parea("Token_Ruta");
-                parea("Token_Comillas");
-                parea("Token_]");
-            }
-        
-        }**/
         
         public void MC(){
             if(valor.getTok().equals("Token_[")){
@@ -448,15 +401,20 @@ public class Analizador_Sintactico {
         
         
         
-        public void parea(String p){
-            if(!p.equals(valor.getTok())){
-                System.out.println("Se esperaba..."+tipoE(p));
-            }
-            
-            if (!valor.getTok().equals("Token_End-Configuracion")){
+        public void parea(String terminal){
+            if(valor.getTok().equals(terminal)){
+                System.out.println("Si Reconoce  "+terminal);
                 recorrido+=1;
                 valor= listT.get(recorrido);
-            } 
+            }else{
+                System.out.println("Se esperaba..."+tipoE(terminal));
+                
+            }
+            
+          //  if (!valor.getTok().equals("Fin")){
+          //      recorrido+=1;
+          //      valor= listT.get(recorrido);
+          //  } 
             
         }
 

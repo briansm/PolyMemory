@@ -56,7 +56,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
         btn_analizar = new javax.swing.JButton();
         btn_simbolos = new javax.swing.JButton();
         btn_errores = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btn_Sintactico = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,10 +85,10 @@ public class Ventana_Analisis extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_Sintactico.setText("Sintactico");
+        btn_Sintactico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_SintacticoActionPerformed(evt);
             }
         });
 
@@ -105,7 +105,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
                         .addComponent(btn_simbolos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_analizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_errores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton1))
+                    .addComponent(btn_Sintactico))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -123,7 +123,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addComponent(btn_errores)
                         .addGap(48, 48, 48)
-                        .addComponent(jButton1)))
+                        .addComponent(btn_Sintactico)))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
 
@@ -194,9 +194,9 @@ public class Ventana_Analisis extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_erroresActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_SintacticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SintacticoActionPerformed
        sint.Sintactico(analisis.getT());
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_SintacticoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,10 +235,10 @@ public class Ventana_Analisis extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Area_editor;
+    private javax.swing.JButton btn_Sintactico;
     private javax.swing.JButton btn_analizar;
     private javax.swing.JButton btn_errores;
     private javax.swing.JButton btn_simbolos;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
