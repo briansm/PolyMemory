@@ -52,25 +52,34 @@ public class Analizador_Sintactico {
         }
         
         public void Modul(){
-            Sub();
-            ModulP();
+            if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                M();
+                parea("Token_]");
+                ModulP();
+            }
+            
     
         }
         
         public void ModulP(){
-             Sub();
-             ModulP();
+             if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                M();
+                parea("Token_]");
+                ModulP();
+             }
     
         }
         
-        public void Sub(){
+    /**  public void Sub(){
             if(valor.getTok().equals("Token_[")){
                 parea("Token_[");
                 M();
                 parea("Token_]");
             }
     
-        }
+        }**/
         
         public void M(){
             if(valor.getTok().equals("Token_Juego")){
@@ -101,22 +110,31 @@ public class Analizador_Sintactico {
         }
         
         public void MJ(){
-            Juego();
-            MJP();
+            if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                JuegoP();
+                parea("Token_]");
+                MJP();
+            }
+            
         }
         
         public void MJP(){
-            Juego();
-            MJP();
+            if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                JuegoP();
+                parea("Token_]");
+                MJP();
+            }
         }
         
-        public void Juego(){
+      /**  public void Juego(){
             if(valor.getTok().equals("Token_[")){
                 parea("Token_[");
                 JuegoP();
                 parea("Token_]");
             }
-        }
+        } **/
         
         public void JuegoP(){
             if(valor.getTok().equals("Token_Nivel")){
@@ -135,24 +153,33 @@ public class Analizador_Sintactico {
         }
         
         public void SN(){
-            Nivel();
-            SNP();
+            if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                NivelP();
+                parea("Token_]");
+                SNP();
+            }
+            
         }
         
         public void SNP(){
-            Nivel();
-            SNP();
+            if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                NivelP();
+                parea("Token_]");
+                SNP();
+            }
         }
         
         
         
-        public void Nivel(){
+   /**     public void Nivel(){
             if(valor.getTok().equals("Token_[")){
                 parea("Token_[");
                 NivelP();
                 parea("Token_]");
             }
-        }
+        } **/
         
         public void NivelP(){
             if(valor.getTok().equals("Token_Facil")){
@@ -184,23 +211,32 @@ public class Analizador_Sintactico {
         
         
         public void ST(){
-            Tiempo();
-            STP();
+           if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                TiempoP();
+                parea("Token_]");
+                STP();
+            }
+            
         }
         
         public void STP(){
-            Tiempo();
-            STP();
+            if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                TiempoP();
+                parea("Token_]");
+                STP();
+            }
         }
         
-        public void Tiempo(){
+     /**   public void Tiempo(){
             if(valor.getTok().equals("Token_[")){
                 parea("Token_[");
                 TiempoP();
                 parea("Token_]");
             }
         
-        }
+        }**/
         
         public void TiempoP(){
             if(valor.getTok().equals("Token_Facil")){
@@ -229,16 +265,37 @@ public class Analizador_Sintactico {
         
         
         public void MU(){
-            Usuario();
-            MUP();
+            if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                parea("Token_Nombre");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                parea("Token_Comillas");
+                parea("Token_Id");
+                parea("Token_Comillas");
+                parea("Token_]");
+                MUP();
+            }
+            
         }
         
         public void MUP(){
-            Usuario();
-            MUP();
+            if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                parea("Token_Nombre");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                parea("Token_Comillas");
+                parea("Token_Id");
+                parea("Token_Comillas");
+                parea("Token_]");
+                MUP();
+            }
         }
         
-        public void Usuario(){
+     /**   public void Usuario(){
             if(valor.getTok().equals("Token_[")){
                 parea("Token_[");
                 parea("Token_Nombre");
@@ -250,19 +307,40 @@ public class Analizador_Sintactico {
                 parea("Token_Comillas");
                 parea("Token_]");
             }
-        }
+        }**/
         
         public void MS(){
-            Sonido();
-            MSP();
+            if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                parea("Token_Track");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                parea("Token_Comillas");
+                parea("Token_Ruta");
+                parea("Token_Comillas");
+                parea("Token_]");
+                MSP();
+            }
+            
         }
         
         public void MSP(){
-            Sonido();
-            MSP();
+            if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                parea("Token_Track");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                parea("Token_Comillas");
+                parea("Token_Ruta");
+                parea("Token_Comillas");
+                parea("Token_]");
+                MSP();
+            }
         }
         
-        public void Sonido(){
+     /**   public void Sonido(){
             if(valor.getTok().equals("Token_[")){
                 parea("Token_[");
                 parea("Token_Track");
@@ -275,7 +353,7 @@ public class Analizador_Sintactico {
                 parea("Token_]");
             }
         
-        }
+        }**/
         
         public void MC(){
             if(valor.getTok().equals("Token_[")){
