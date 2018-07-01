@@ -33,7 +33,10 @@
                       <Component id="btn_analizar" alignment="0" max="32767" attributes="0"/>
                       <Component id="btn_errores" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="btn_Sintactico" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="btn_Juego" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btn_Sintactico" alignment="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="56" max="32767" attributes="0"/>
           </Group>
@@ -56,6 +59,8 @@
                       <Component id="btn_errores" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       <Component id="btn_Sintactico" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="btn_Juego" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="81" max="32767" attributes="0"/>
@@ -109,6 +114,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_SintacticoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_Juego">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Juego"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_JuegoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

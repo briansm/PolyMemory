@@ -57,6 +57,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
         btn_simbolos = new javax.swing.JButton();
         btn_errores = new javax.swing.JButton();
         btn_Sintactico = new javax.swing.JButton();
+        btn_Juego = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,6 +93,13 @@ public class Ventana_Analisis extends javax.swing.JFrame {
             }
         });
 
+        btn_Juego.setText("Juego");
+        btn_Juego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_JuegoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -105,7 +113,9 @@ public class Ventana_Analisis extends javax.swing.JFrame {
                         .addComponent(btn_simbolos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_analizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_errores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btn_Sintactico))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btn_Juego, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_Sintactico, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -123,7 +133,9 @@ public class Ventana_Analisis extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addComponent(btn_errores)
                         .addGap(48, 48, 48)
-                        .addComponent(btn_Sintactico)))
+                        .addComponent(btn_Sintactico)
+                        .addGap(28, 28, 28)
+                        .addComponent(btn_Juego)))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
 
@@ -198,6 +210,12 @@ public class Ventana_Analisis extends javax.swing.JFrame {
        sint.Sintactico(analisis.getT());
     }//GEN-LAST:event_btn_SintacticoActionPerformed
 
+    private void btn_JuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_JuegoActionPerformed
+        Menu menu =new Menu();
+        menu.show();
+        
+    }//GEN-LAST:event_btn_JuegoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,6 +253,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Area_editor;
+    private javax.swing.JButton btn_Juego;
     private javax.swing.JButton btn_Sintactico;
     private javax.swing.JButton btn_analizar;
     private javax.swing.JButton btn_errores;
