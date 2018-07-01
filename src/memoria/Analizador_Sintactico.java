@@ -349,9 +349,55 @@ public class Analizador_Sintactico {
                 parea("Token_Id");
                 parea("Token_Comillas");
                 parea("Token_]");
+                MCP();
             }
         }
         
+        public void MCP(){
+            if(valor.getTok().equals("Token_[")){
+                parea("Token_[");
+                parea("Token_Nombre");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                parea("Token_Comillas");
+                parea("Token_Id");
+                parea("Token_Comillas");
+                parea("Token_]");
+                
+                parea("Token_[");
+                parea("Token_Imagen");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                parea("Token_Comillas");
+                parea("Token_Ruta");
+                parea("Token_Comillas");
+                parea("Token_]");
+                
+                parea("Token_[");
+                parea("Token_Idioma");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                parea("Token_Comillas");
+                parea("Token_Id");
+                parea("Token_Comillas");
+                parea("Token_]");
+                
+                parea("Token_[");
+                parea("Token_Palabra");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                parea("Token_Comillas");
+                parea("Token_Id");
+                parea("Token_Comillas");
+                parea("Token_]");
+                MCP();
+            }
+        
+        }
         
         public void Operacion(){
             T();
