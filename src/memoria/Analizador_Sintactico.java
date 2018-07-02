@@ -34,10 +34,11 @@ public class Analizador_Sintactico {
                 parea("Token_[");
                 parea("Token_Configuracion");
                 parea("Token_]");
+                parea("Token_[");
                 
                 Modul();
                 
-                parea("Token_[");
+               
                 parea("Token_End-Configuracion");
                 parea("Token_]");
                 
@@ -51,130 +52,210 @@ public class Analizador_Sintactico {
                 parea("Token_[");
                 parea("Token_Configuracion");
                 parea("Token_]");
+                parea("Token_[");
                 
                 Modul();
                 
-                parea("Token_[");
+                
                 parea("Token_End-Configuracion");
                 parea("Token_]");
                 
                 InicioP();
-            }
-            //InicioP-> EPSILON
-            //Nada
+            }else{
+                //InicioP-> EPSILON
+                //Nada
+                }
+            
         }
         
         
         public void Modul(){
-            if(valor.getTok().equals("Token_[")){
-                
-                parea("Token_[");
-                M();
-                parea("Token_]");
-                ModulP();
-            }
-            
-    
-        }
-        
-        public void ModulP(){
-             if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                M();
-                parea("Token_]");
-                ModulP();
-             }
-    
-        }
-        
-        
-        public void M(){
             if(valor.getTok().equals("Token_Juego")){
                 
                 parea("Token_Juego");
                 parea("Token_]");
+                parea("Token_[");
                 
                 MJ();
-                parea("Token_[");
+                
                 parea("Token_End-Juego");
+                parea("Token_]");
+                parea("Token_[");
+                ModulP();
             }else if(valor.getTok().equals("Token_Usuarios")){
                 parea("Token_Usuarios");
                 parea("Token_]");
-                MU();
                 parea("Token_[");
+                
+                MU();
+                
                 parea("Token_End-Usuarios");
+                parea("Token_]");
+                parea("Token_[");
+                ModulP();
             }else if(valor.getTok().equals("Token_Sonido")){
                 parea("Token_Sonido");
                 parea("Token_]");
-                MS();
                 parea("Token_[");
+                MS();
+                
                 parea("Token_End-Sonido");
+                parea("Token_]");
+                parea("Token_[");
+                ModulP();
             }else if(valor.getTok().equals("Token_Carta")){
                 parea("Token_Carta");
                 parea("Token_]");
-                MC();
                 parea("Token_[");
+                MC();
+                
                 parea("Token_End-Carta");
+                parea("Token_]");
+                parea("Token_[");
+                ModulP();
             }
         }
         
-        public void MJ(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                JuegoP();
+        public void ModulP(){
+            if(valor.getTok().equals("Token_Juego")){
+                
+                parea("Token_Juego");
                 parea("Token_]");
+                parea("Token_[");
+                
+                MJ();
+                
+                parea("Token_End-Juego");
+                parea("Token_]");
+                parea("Token_[");
+                ModulP();
+            }else if(valor.getTok().equals("Token_Usuarios")){
+                parea("Token_Usuarios");
+                parea("Token_]");
+                parea("Token_[");
+                MU();
+                
+                parea("Token_End-Usuarios");
+                parea("Token_]");
+                parea("Token_[");
+                ModulP();
+            }else if(valor.getTok().equals("Token_Sonido")){
+                parea("Token_Sonido");
+                parea("Token_]");
+                parea("Token_[");
+                MS();
+                
+                parea("Token_End-Sonido");
+                parea("Token_]");
+                parea("Token_[");
+                ModulP();
+            }else if(valor.getTok().equals("Token_Carta")){
+                parea("Token_Carta");
+                parea("Token_]");
+                parea("Token_[");
+                MC();
+                
+                parea("Token_End-Carta");
+                parea("Token_]");
+                parea("Token_[");
+                ModulP();
+            }
+        }
+        
+        
+        
+        
+        public void MJ(){
+           
+           if(valor.getTok().equals("Token_Nivel")){
+                parea("Token_Nivel");
+                parea("Token_]");
+                parea("Token_[");
+                SN();
+                
+                parea("Token_End-Nivel");
+                parea("Token_]");
+                parea("Token_[");
+                MJP();
+            }else if(valor.getTok().equals("Token_Tiempo")){
+                parea("Token_Tiempo");
+                parea("Token_]");
+                parea("Token_[");
+                ST();
+                
+                parea("Token_End-Tiempo");
+                parea("Token_]");
+                parea("Token_[");
                 MJP();
             }
             
         }
         
         public void MJP(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                JuegoP();
+            if(valor.getTok().equals("Token_Nivel")){
+                parea("Token_Nivel");
                 parea("Token_]");
+                parea("Token_[");
+                SN();
+                
+                parea("Token_End-Nivel");
+                parea("Token_]");
+                parea("Token_[");
+                MJP();
+            }else if(valor.getTok().equals("Token_Tiempo")){
+                parea("Token_Tiempo");
+                parea("Token_]");
+                parea("Token_[");
+                ST();
+                
+                parea("Token_End-Tiempo");
+                parea("Token_]");
+                parea("Token_[");
                 MJP();
             }
         }
         
-        public void JuegoP(){
-            if(valor.getTok().equals("Token_Nivel")){
-                parea("Token_Nivel");
-                parea("Token_]");
-                SN();
-                parea("Token_[");
-                parea("Token_End-Nivel");
-            }else if(valor.getTok().equals("Token_Tiempo")){
-                parea("Token_Tiempo");
-                parea("Token_]");
-                ST();
-                parea("Token_[");
-                parea("Token_End-Tiempo");
-                
-            }
-        }
+
         
         public void SN(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                NivelP();
+            if(valor.getTok().equals("Token_Facil")){
+                parea("Token_Facil");
                 parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                Operacion();
+                parea("Token_#");
+                Operacion();
+                parea("Token_]");
+                parea("Token_[");
                 SNP();
-            }
+            }else if(valor.getTok().equals("Token_Intermedio")){
+                parea("Token_Intermedio");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                Operacion();
+                parea("Token_#");
+                Operacion();
+                parea("Token_]");
+                parea("Token_[");
+                SNP();
+            }else if(valor.getTok().equals("Token_Dificil")){
+                parea("Token_Dificil");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                Operacion();
+                parea("Token_#");
+                Operacion();
+                parea("Token_]");
+                parea("Token_[");
+                SNP();
+            } 
             
         }
         
         public void SNP(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                NivelP();
-                parea("Token_]");
-                SNP();
-            }
-        }
-        
-        
-        public void NivelP(){
             if(valor.getTok().equals("Token_Facil")){
                 parea("Token_Facil");
                 parea("Token_]");
@@ -183,6 +264,9 @@ public class Analizador_Sintactico {
                 Operacion();
                 parea("Token_#");
                 Operacion();
+                parea("Token_]");
+                parea("Token_[");
+                SNP();
             }else if(valor.getTok().equals("Token_Intermedio")){
                 parea("Token_Intermedio");
                 parea("Token_]");
@@ -191,6 +275,9 @@ public class Analizador_Sintactico {
                 Operacion();
                 parea("Token_#");
                 Operacion();
+                parea("Token_]");
+                parea("Token_[");
+                SNP();
             }else if(valor.getTok().equals("Token_Dificil")){
                 parea("Token_Dificil");
                 parea("Token_]");
@@ -199,39 +286,25 @@ public class Analizador_Sintactico {
                 Operacion();
                 parea("Token_#");
                 Operacion();
+                parea("Token_]");
+                parea("Token_[");
+                SNP();
             } 
         }
         
         
+        
         public void ST(){
-           if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                TiempoP();
-                parea("Token_]");
-                STP();
-            }
-            
-        }
-        
-        public void STP(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
-                TiempoP();
-                parea("Token_]");
-                STP();
-            }
-        }
-        
-     
-        
-        public void TiempoP(){
-            if(valor.getTok().equals("Token_Facil")){
+           if(valor.getTok().equals("Token_Facil")){
                 parea("Token_Facil");
                 parea("Token_]");
                 parea("Token_->");
                 parea("Token_[");
+                
                 Operacion();
-              
+                parea("Token_]");
+                parea("Token_[");
+                STP();
             }else if(valor.getTok().equals("Token_Intermedio")){
                 parea("Token_Intermedio");
                 parea("Token_]");
@@ -239,6 +312,9 @@ public class Analizador_Sintactico {
                 parea("Token_[");
                 Operacion();
                 
+                parea("Token_]");
+                parea("Token_[");
+                STP();
             }else if(valor.getTok().equals("Token_Dificil")){
                 parea("Token_Dificil");
                 parea("Token_]");
@@ -246,7 +322,45 @@ public class Analizador_Sintactico {
                 parea("Token_[");
                 Operacion();
                 
-            }   
+                parea("Token_]");
+                parea("Token_[");
+                STP();
+            } 
+            
+        }
+        
+        public void STP(){
+            if(valor.getTok().equals("Token_Facil")){
+                parea("Token_Facil");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                
+                Operacion();
+                parea("Token_]");
+                parea("Token_[");
+                STP();
+            }else if(valor.getTok().equals("Token_Intermedio")){
+                parea("Token_Intermedio");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                Operacion();
+                
+                parea("Token_]");
+                parea("Token_[");
+                STP();
+            }else if(valor.getTok().equals("Token_Dificil")){
+                parea("Token_Dificil");
+                parea("Token_]");
+                parea("Token_->");
+                parea("Token_[");
+                Operacion();
+                
+                parea("Token_]");
+                parea("Token_[");
+                STP();
+            } 
         }
         
         
