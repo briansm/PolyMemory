@@ -208,6 +208,20 @@ public class Ventana_Analisis extends javax.swing.JFrame {
 
     private void btn_SintacticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SintacticoActionPerformed
        sint.Sintactico(analisis.getT());
+       reportes.CrearRES(sint.getSint());
+       try {
+
+            Desktop.getDesktop().browse(new URI("file:///C:/Users/Dell%20E5420/Documents/Sintactico.html"));
+
+        } catch (URISyntaxException ex) {
+
+            System.out.println(ex);
+
+        }catch(IOException e){
+
+            System.out.println(e);
+
+        }
     }//GEN-LAST:event_btn_SintacticoActionPerformed
 
     private void btn_JuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_JuegoActionPerformed

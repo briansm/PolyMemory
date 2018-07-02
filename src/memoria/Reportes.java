@@ -10,6 +10,7 @@ public class Reportes {
     //------Declaracion de listas-----------------------
     ArrayList<Datos>list;
     ArrayList<Datos>lise;
+    ArrayList<Datos>lisS;
     Crear_Reporte crearR=new Crear_Reporte();
     
     //---------Metodo para Reporte Tokens---------------
@@ -153,6 +154,77 @@ public class Reportes {
       //------Falta generar archivo------  
            crearR.guardarReporte(html1, "Error");
            lise.clear();
+    }
+    
+    //-------------------------------Metodo para reporte errores Sintacticos---------------------
+    public void CrearRES(ArrayList lista){
+        lisS = lista;
+        String html2 = "<html>\n"
+                 +"<head>\n"
+                +"<style type=\"text/css\">\n" //_____________________________style de css__________________________________________
+                +"table {\n" +
+                "	font-family: verdana,arial,sans-serif;\n" +
+                "	font-size:11px;\n" +
+                "	color:#333333;\n" +
+                "	border-width: 1px;\n" +
+                "	border-color: #666666;\n" +
+                "	border-collapse: collapse;\n" +
+                "	width: 100%;\n" +
+                "}\n"
+                +" th {\n" +
+                "	border-width: 1px;\n" +
+                "	padding: 8px;\n" +
+                "	border-style: solid;\n" +
+                "	background-color: #1DFF50;\n" +
+                "	color: white;\n" +
+                "}\n" +
+                " td {\n" +
+                "	border-width: 1px;\n" +
+                "	padding: 8px;\n" +
+                "	border-style: solid;\n" +
+                "	border-color: #666666;\n" +
+                "	background-color: #ffffff;\n" +
+                "}\n" +
+                " tr:nth-child(even){background-color: #f2f2f2}\n"
+                +"</style>\n"
+                +"<meta charset=\"UTF-8\">\n"
+                +"<title>Reporte errores</title>\n"
+                +"</head\n>"
+                +"<body background=\"\\Imagenes\\r2.jpg\">"
+                +"<font color=\"Olive\" face=\"Comic Sans MS,arial\">"
+                +"<h3>Lista de errores</h3>"
+                +"</font>"
+                +"<table>\n"
+                +"<tr>\n"
+                    +"<th>No.</th>\n"
+                    +"<th>Lexema</th>\n"
+                    +"<th>Fila</th>\n"
+                    +"<th>Columna</th>\n"
+                    +"<th>Error</th>\n"
+                    +"<th>Descripcion</th>\n"
+                +"</tr>\n";
+                
+            if(lisS!= null){
+                System.out.println("456789878787897878976787678767876");
+            }
+                for(int i=0;i<lisS.size();i++) {
+                    html2+="<tr>\n"
+                            +"<td>"+(i+1)+"</td>\n"
+                            +"<td>"+((Datos)lisS.get(i)).getTerm()+"</td>\n"
+                            +"<td>"+((Datos)lisS.get(i)).getFila()+"</td>\n"
+                            +"<td>"+((Datos)lisS.get(i)).getColum()+"</td>\n"
+                            +"<td>"+((Datos)lisS.get(i)).getSerror()+"</td>\n"
+                            +"<td>"+((Datos)lisS.get(i)).getDesc()+"</td>\n"
+                        +"</tr>\n";
+                }
+            //----------------------FIN FOR----------------------------      
+            html2+="</table>\n "
+                + "</body>\n "
+                + "</html>";
+           //---------------------FIN HTML-----------------------------------------
+      //------Falta generar archivo------  
+           crearR.guardarReporte(html2, "Sintactico");
+           lisS.clear();
     }
     
 }

@@ -8,6 +8,13 @@ public class Analizador_Sintactico {
     ArrayList<Tokens>listT;
     int recorrido;
     Tokens valor;
+    public ArrayList<Datos> arregloSint = new ArrayList<Datos>();
+    public ArrayList<Datos> getSint() {
+        return arregloSint;
+    }
+    public void setSint(ArrayList<Datos> arregloSint) {
+        this.arregloSint = arregloSint;
+    }
     
     
         public void Sintactico(ArrayList lt){
@@ -453,7 +460,8 @@ public class Analizador_Sintactico {
                 recorrido+=1;
                 valor= listT.get(recorrido);
             }else{
-                System.out.println("Se esperaba..."+tipoE(terminal));
+                arregloSint.add(new Datos( terminal, 1, 1,"Se esperaba..."+tipoE(terminal)));
+               // System.out.println("Se esperaba..."+tipoE(terminal));
                 
             }
             

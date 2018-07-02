@@ -18,7 +18,11 @@ public class Crear_Reporte {
            
         }else if(tipoReporte == "Error"){
             nombreArchivo="C:\\Users\\Dell E5420\\Documents\\Errores.html";
+            
+        }else if(tipoReporte == "Sintactico"){
+            nombreArchivo="C:\\Users\\Dell E5420\\Documents\\Sintactico.html";
         }
+        
         archivo = new File(nombreArchivo);
         try(FileWriter escritura = new FileWriter(archivo)){
             escritura.write(codigoHTML);
