@@ -439,8 +439,8 @@ public class Analizador_Sintactico {
         
         
         public void MC(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
+            if(valor.getTok().equals("Token_Nombre")){
+                
                 parea("Token_Nombre");
                 parea("Token_]");
                 parea("Token_->");
@@ -479,13 +479,14 @@ public class Analizador_Sintactico {
                 parea("Token_Id");
                 parea("Token_Comillas");
                 parea("Token_]");
+                parea("Token_[");
                 MCP();
             }
         }
         
         public void MCP(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
+            if(valor.getTok().equals("Token_Nombre")){
+                
                 parea("Token_Nombre");
                 parea("Token_]");
                 parea("Token_->");
@@ -524,6 +525,7 @@ public class Analizador_Sintactico {
                 parea("Token_Id");
                 parea("Token_Comillas");
                 parea("Token_]");
+                parea("Token_[");
                 MCP();
             }
         
