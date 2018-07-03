@@ -14,7 +14,18 @@ public class Analizador_Lexico {
     public ArrayList<Datos> arregloError = new ArrayList<Datos>();
     
     public ArrayList<Tokens> listaTok=new ArrayList<Tokens>();
-    
+    public static ArrayList<Lexemas> lista_lexemas=new ArrayList<Lexemas>();
+    public static ArrayList<Niveles> lista_niveles=new ArrayList<Niveles>();
+    public static ArrayList<Idiomas> lista_idiomas=new ArrayList<Idiomas>();
+    public ArrayList<Lexemas> getLexem() {
+        return lista_lexemas;
+    }
+    public ArrayList<Niveles> getNiveles() {
+        return lista_niveles;
+    }
+    public ArrayList<Idiomas> getId() {
+        return lista_idiomas;
+    }
     public ArrayList<Tokens> getT() {
         return listaTok;
     }
@@ -116,7 +127,8 @@ public class Analizador_Lexico {
                         lexema += caracter[i];
                     } else {
                         num++;
-                        listaTok.add(new Tokens(tipoT(lexema)));
+                        lista_lexemas.add(new Lexemas(lexema));
+                        //listaTok.add(new Tokens(tipoT(lexema)));
                         arregloToken.add(new Datos(num, lexema, tipoT(lexema), fila, columna));
                         lexema = "";
                         estado = 0;
@@ -136,6 +148,7 @@ public class Analizador_Lexico {
                     } else {
                         num++;
                         listaTok.add(new Tokens("Token_Digito"));
+                        //lista_lexemas.add(new Lexemas(lexema));
                         arregloToken.add(new Datos(num, lexema, "Token_Digito", fila, columna));
                         lexema = "";
                         estado = 0;
@@ -153,6 +166,7 @@ public class Analizador_Lexico {
                     {
                         num++;
                         listaTok.add(new Tokens("Token_Simbolo"));
+                        //lista_lexemas.add(new Lexemas(lexema));
                         arregloToken.add(new Datos(num, lexema, "Token_Simbolo", fila, columna));
                         lexema = "";
                         estado = 0;
@@ -164,6 +178,7 @@ public class Analizador_Lexico {
                 case 4:
                     num++;
                     listaTok.add(new Tokens("TOken_Simbolo"));
+                    //lista_lexemas.add(new Lexemas(lexema));
                     arregloToken.add(new Datos(num, lexema, "Token_Simbolo", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -193,6 +208,8 @@ public class Analizador_Lexico {
                     } else {
                         num++;
                         listaTok.add(new Tokens(tipoT(lexema)));
+                        tipoL(lexema);
+                        
                         arregloToken.add(new Datos(num, lexema, tipoT(lexema), fila, columna));
                         lexema = "";
                         estado = 0;
@@ -230,6 +247,7 @@ public class Analizador_Lexico {
                 case 9:
                     num++;
                     listaTok.add(new Tokens("Token_->"));
+                    //lista_lexemas.add(new Lexemas(lexema));
                     arregloToken.add(new Datos(num, lexema, "Token_->", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -257,6 +275,7 @@ public class Analizador_Lexico {
                     } else {
                         num++;
                         listaTok.add(new Tokens( tipoT(lexema)));
+                        //lista_lexemas.add(new Lexemas(lexema));
                         arregloToken.add(new Datos(num, lexema, tipoT(lexema), fila, columna));
                         lexema = "";
                         estado = 0;
@@ -272,6 +291,7 @@ public class Analizador_Lexico {
                     } else {
                         num++;
                         listaTok.add(new Tokens("Token_Decimal"));
+                        //lista_lexemas.add(new Lexemas(lexema));
                         arregloToken.add(new Datos(num, lexema, "Token_Decimal", fila, columna));
                         lexema = "";
                         estado = 0;
@@ -373,6 +393,7 @@ public class Analizador_Lexico {
                 case 19:
                     num++;
                     listaTok.add(new Tokens("Token_Ruta"));
+                    //lista_lexemas.add(new Lexemas(lexema));
                     arregloToken.add(new Datos(num, lexema, "Token_Ruta", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -382,6 +403,7 @@ public class Analizador_Lexico {
                 case 20:
                     num++;
                     listaTok.add(new Tokens("Token_["));
+                    //lista_lexemas.add(new Lexemas(lexema));
                     arregloToken.add(new Datos(num, lexema, "Token_[", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -391,6 +413,7 @@ public class Analizador_Lexico {
                 case 21:
                     num++;
                     listaTok.add(new Tokens("Token_]"));
+                    //lista_lexemas.add(new Lexemas(lexema));
                     arregloToken.add(new Datos(num, lexema, "Token_]", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -400,6 +423,7 @@ public class Analizador_Lexico {
                 case 22:
                     num++;
                     listaTok.add(new Tokens("Token_Comillas"));
+                    //lista_lexemas.add(new Lexemas(lexema));
                     arregloToken.add(new Datos(num, lexema, "Token_Comillas", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -409,6 +433,7 @@ public class Analizador_Lexico {
                 case 23:
                     num++;
                     listaTok.add(new Tokens("Token_+"));
+                    //lista_lexemas.add(new Lexemas(lexema));
                     arregloToken.add(new Datos(num, lexema, "Token_+", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -418,6 +443,7 @@ public class Analizador_Lexico {
                 case 24:
                     num++;
                     listaTok.add(new Tokens("Token_*"));
+                    //lista_lexemas.add(new Lexemas(lexema));
                     arregloToken.add(new Datos(num, lexema, "Token_*", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -427,6 +453,7 @@ public class Analizador_Lexico {
                 case 25:
                     num++;
                     listaTok.add(new Tokens("Token_/"));
+                    //lista_lexemas.add(new Lexemas(lexema));
                     arregloToken.add(new Datos(num, lexema, "Token_/", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -436,6 +463,7 @@ public class Analizador_Lexico {
                 case 26:
                     num++;
                     listaTok.add(new Tokens("Token_#"));
+                    //lista_lexemas.add(new Lexemas(lexema));
                     arregloToken.add(new Datos(num, lexema, "Token_#", fila, columna));
                     lexema = "";
                     estado = 0;
@@ -563,6 +591,187 @@ public class Analizador_Lexico {
             
             default:
                 tipo_token = "Token_Id";
+                
+                break;
+        }
+        return tipo_token;
+    }
+    
+    
+    //--------Metodo Para Reconocer Tokens----------------------------
+    public String tipoL(String lexema) {
+        String tipo_token="";
+        String lexem=lexema.toLowerCase();
+        switch (lexem) {
+            case "configuracion":
+                //tipo_token = "Token_Configuracion";
+                break;
+            
+            case "juego":
+                //tipo_token = "Token_Juego";
+                break;
+            
+            case "nivel":
+                //tipo_token = "Token_Nivel";
+                break;
+            
+            case "facil":
+                lista_niveles.add(new Niveles(lexema));
+                //tipo_token = "Token_Facil";
+                break;
+            
+            case "intermedio":
+                lista_niveles.add(new Niveles(lexema));
+                //tipo_token = "Token_Intermedio";
+                break;
+            
+            case "dificil":
+                lista_niveles.add(new Niveles(lexema));
+                //tipo_token = "Token_Dificil";
+                break;
+            
+            case "tiempo":
+                //tipo_token = "Token_Tiempo";
+                break;
+            
+            case "usuarios":
+                //tipo_token = "Token_Usuarios";
+                break;
+            
+            case "nombre":
+                //tipo_token = "Token_Nombre";
+                break;
+            
+            case "sonido":
+                //tipo_token = "Token_Sonido";
+                break;
+            
+            case "track_1":
+                //tipo_token = "Token_Track";
+                break;
+            
+            case "track_2":
+                //tipo_token = "Token_Track";
+                break;
+            
+            case "track_3":
+                //tipo_token = "Token_Track";
+                break;
+            
+            case "imagen":
+                //tipo_token = "Token_Imagen";
+                break;
+            
+            case "idioma":
+                //tipo_token = "Token_Idioma";
+                break;
+            
+            case "palabra":
+                //tipo_token = "Token_Palabra";
+                break;
+            
+            case "carta":
+                //tipo_token = "Token_Carta";
+                break;
+            
+            case "end-configuracion":
+                //tipo_token = "Token_End-Configuracion";
+                break;
+            
+            case "end-nivel":
+                //tipo_token = "Token_End-Nivel";
+                break;
+            
+            case "end-tiempo":
+                //tipo_token = "Token_End-Tiempo";
+                break;
+            
+            case "end-juego":
+                //tipo_token = "Token_End-Juego";
+                break;
+            
+            case "end-usuarios":
+                //tipo_token = "Token_End-Usuarios";
+                break;
+            
+            case "end-sonido":
+                //tipo_token = "Token_End-Sonido";
+                break;
+            
+            case "end-carta":
+                //tipo_token = "Token_End-Carta";
+                break;
+            case "ingles":
+                lista_idiomas.add(new Idiomas(lexema));
+                //tipo_token = "ingles";
+                break;    
+            case "aleman":
+                lista_idiomas.add(new Idiomas(lexema));
+                //tipo_token = "ingles";
+                break;
+                case "frances":
+                    lista_idiomas.add(new Idiomas(lexema));
+                //tipo_token = "ingles";
+                break;
+                case "italiano":
+                    lista_idiomas.add(new Idiomas(lexema));
+                //tipo_token = "ingles";
+                break;
+                case "español":
+                    lista_idiomas.add(new Idiomas(lexema));
+                //tipo_token = "ingles";
+                break;
+                case "japones":
+                    lista_idiomas.add(new Idiomas(lexema));
+                //tipo_token = "ingles";
+                break;
+                case "portugues":
+                    lista_idiomas.add(new Idiomas(lexema));
+                //tipo_token = "ingles";
+                break;
+                case "irlandes":
+                    lista_idiomas.add(new Idiomas(lexema));
+                //tipo_token = "ingles";
+                break;
+                case "[":
+                //tipo_token = "ingles";
+                break;
+                case "]":
+                //tipo_token = "ingles";
+                break;
+                case "carta_1":
+                //tipo_token = "ingles";
+                break;
+                case "carta_2":
+                //tipo_token = "ingles";
+                break;
+                case "carta_3":
+                //tipo_token = "ingles";
+                break;
+                case "carta_4":
+                //tipo_token = "ingles";
+                break;
+                case "carta_5":
+                //tipo_token = "ingles";
+                break;
+                case "carta_6":
+                //tipo_token = "ingles";
+                break;
+                case "carta_7":
+                //tipo_token = "ingles";
+                break;
+                case "carta_8":
+                //tipo_token = "ingles";
+                break;
+                case "carta_9":
+                //tipo_token = "ingles";
+                break;
+                case "carta_10":
+                //tipo_token = "ingles";
+                break;
+            default:
+                tipo_token="id";
+                lista_lexemas.add(new Lexemas(lexema));
                 break;
         }
         return tipo_token;

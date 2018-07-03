@@ -38,7 +38,8 @@ public class Datos {
         this.columna = c;
         this.desc=desc;
     }
-    
+     
+     
     
     //-------------------Getters y setter------------------------------------------
             public int getNumero() {

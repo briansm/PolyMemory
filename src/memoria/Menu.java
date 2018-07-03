@@ -5,17 +5,31 @@
  */
 package memoria;
 
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Dell E5420
  */
 public class Menu extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Menu
-     */
+    
+    Analizador_Lexico anLe=new Analizador_Lexico();
+    Prueba prueba=new Prueba();
     public Menu() {
         initComponents();
+        prueba.Prueba(anLe.getLexem(),cb_Nickname);
+        prueba.Prueba2(anLe.getNiveles(),cb_Nivel);
+        prueba.Prueba3(anLe.getId(),cb_Idioma);
+        ((JPanel)getContentPane()).setOpaque(false);
+        ImageIcon fondo=new ImageIcon(this.getClass().getResource("/Imagenes/menu.png"));
+        JLabel fon=new JLabel();
+        fon.setIcon(fondo);
+        getLayeredPane().add(fon,JLayeredPane.FRAME_CONTENT_LAYER);
+        fon.setBounds(0,0,fondo.getIconWidth() , fondo.getIconHeight());
     }
 
     /**
@@ -38,10 +52,28 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingrese/Seleccione un nickname");
 
+        txt_Nickname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_NicknameActionPerformed(evt);
+            }
+        });
+
+        cb_Nickname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_NicknameActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Seleccione un Nivel:");
 
+        jLabel3.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Seleccione un Idioma:");
 
         btn_Ingresar.setText("Ingresar");
@@ -76,7 +108,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(158, 158, 158)
                         .addComponent(btn_Ingresar)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,6 +139,17 @@ public class Menu extends javax.swing.JFrame {
        Juego juego=new Juego();
        juego.show();
     }//GEN-LAST:event_btn_IngresarActionPerformed
+
+    private void txt_NicknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_NicknameActionPerformed
+        
+    }//GEN-LAST:event_txt_NicknameActionPerformed
+
+    private void cb_NicknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_NicknameActionPerformed
+        String valorComboBox = "";
+
+        valorComboBox = cb_Nickname.getSelectedItem().toString();
+        txt_Nickname.setText(valorComboBox);
+    }//GEN-LAST:event_cb_NicknameActionPerformed
 
     /**
      * @param args the command line arguments

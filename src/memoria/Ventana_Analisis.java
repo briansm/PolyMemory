@@ -27,7 +27,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
     Reportes reportes= new Reportes();
     Crear_Reporte cr=new Crear_Reporte();
     Analizador_Sintactico sint=new Analizador_Sintactico();
-    
+    Prueba prueba=new Prueba();
     JFileChooser selec=new JFileChooser();
     File archiv;
     Abrir_Archivo marchi=new Abrir_Archivo();
@@ -209,6 +209,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
     private void btn_SintacticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SintacticoActionPerformed
        sint.Sintactico(analisis.getT());
        reportes.CrearRES(sint.getSint());
+       
        try {
 
             Desktop.getDesktop().browse(new URI("file:///C:/Users/Dell%20E5420/Documents/Sintactico.html"));

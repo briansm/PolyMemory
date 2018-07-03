@@ -2,18 +2,32 @@
 package memoria;
 
 import java.util.ArrayList;
-
+import Datos_Juego.*;
 
 public class Analizador_Sintactico {
+    Analizador_Lexico alex=new Analizador_Lexico();
     ArrayList<Tokens>listT;
+    ArrayList<Lexemas>listL;
     int recorrido;
     Tokens valor;
+    int vtok;
     public ArrayList<Datos> arregloSint = new ArrayList<Datos>();
     public ArrayList<Datos> getSint() {
         return arregloSint;
     }
     public void setSint(ArrayList<Datos> arregloSint) {
         this.arregloSint = arregloSint;
+    }
+    
+    public String plex(ArrayList l){
+        
+        listL=l;
+        String tok="";
+        if(vtok<listL.size()){
+            tok=((Lexemas)listL.get(vtok)).getTok();
+            vtok++;
+        }
+        return tok;
     }
     
     
@@ -378,6 +392,7 @@ public class Analizador_Sintactico {
                 parea("Token_[");
                 parea("Token_Comillas");
                 parea("Token_Id");
+                
                 parea("Token_Comillas");
                 parea("Token_]");
                 parea("Token_[");
@@ -395,6 +410,7 @@ public class Analizador_Sintactico {
                 parea("Token_[");
                 parea("Token_Comillas");
                 parea("Token_Id");
+               // Usuarios.arregloUsuarios.add();
                 parea("Token_Comillas");
                 parea("Token_]");
                 parea("Token_[");
@@ -583,6 +599,7 @@ public class Analizador_Sintactico {
             if(valor.getTok().equals(terminal)){
                 System.out.println("Si Reconoce  "+terminal);
                 recorrido+=1;
+                vtok++;
                 valor= listT.get(recorrido);
             }else{
                 arregloSint.add(new Datos( valor.getTok(), 1, 1,"Se esperaba..."+tipoE(terminal)));
