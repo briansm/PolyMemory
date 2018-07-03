@@ -405,8 +405,8 @@ public class Analizador_Sintactico {
      
         
         public void MS(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
+            if(valor.getTok().equals("Token_Track")){
+                
                 parea("Token_Track");
                 parea("Token_]");
                 parea("Token_->");
@@ -415,14 +415,15 @@ public class Analizador_Sintactico {
                 parea("Token_Ruta");
                 parea("Token_Comillas");
                 parea("Token_]");
+                parea("Token_[");
                 MSP();
             }
             
         }
         
         public void MSP(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
+            if(valor.getTok().equals("Token_Track")){
+                
                 parea("Token_Track");
                 parea("Token_]");
                 parea("Token_->");
@@ -431,6 +432,7 @@ public class Analizador_Sintactico {
                 parea("Token_Ruta");
                 parea("Token_Comillas");
                 parea("Token_]");
+                parea("Token_[");
                 MSP();
             }
         }
