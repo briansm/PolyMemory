@@ -585,7 +585,7 @@ public class Analizador_Sintactico {
                 recorrido+=1;
                 valor= listT.get(recorrido);
             }else{
-                arregloSint.add(new Datos( terminal, 1, 1,"Se esperaba..."+tipoE(terminal)));
+                arregloSint.add(new Datos( valor.getTok(), 1, 1,"Se esperaba..."+tipoE(terminal)));
                // System.out.println("Se esperaba..."+tipoE(terminal));
                 
             }
@@ -623,6 +623,8 @@ public class Analizador_Sintactico {
                     return "Token_Usuarios";
                 case "Token_Nombre":
                     return "Token_Nombre";
+                case "Token_Ruta":
+                    return "Token_Ruta";    
                 case "Token_Sonido":
                     return "Token_Sonido";
                 case "Token_Track":
