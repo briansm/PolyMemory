@@ -97,6 +97,7 @@ public class Analizador_Sintactico {
                 parea("Token_Sonido");
                 parea("Token_]");
                 parea("Token_[");
+                
                 MS();
                 
                 parea("Token_End-Sonido");
@@ -107,6 +108,7 @@ public class Analizador_Sintactico {
                 parea("Token_Carta");
                 parea("Token_]");
                 parea("Token_[");
+                
                 MC();
                 
                 parea("Token_End-Carta");
@@ -133,6 +135,7 @@ public class Analizador_Sintactico {
                 parea("Token_Usuarios");
                 parea("Token_]");
                 parea("Token_[");
+                
                 MU();
                 
                 parea("Token_End-Usuarios");
@@ -143,6 +146,7 @@ public class Analizador_Sintactico {
                 parea("Token_Sonido");
                 parea("Token_]");
                 parea("Token_[");
+                
                 MS();
                 
                 parea("Token_End-Sonido");
@@ -153,6 +157,7 @@ public class Analizador_Sintactico {
                 parea("Token_Carta");
                 parea("Token_]");
                 parea("Token_[");
+                
                 MC();
                 
                 parea("Token_End-Carta");
@@ -365,8 +370,8 @@ public class Analizador_Sintactico {
         
         
         public void MU(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
+            if(valor.getTok().equals("Token_Nombre")){
+                
                 parea("Token_Nombre");
                 parea("Token_]");
                 parea("Token_->");
@@ -375,14 +380,15 @@ public class Analizador_Sintactico {
                 parea("Token_Id");
                 parea("Token_Comillas");
                 parea("Token_]");
+                parea("Token_[");
                 MUP();
             }
             
         }
         
         public void MUP(){
-            if(valor.getTok().equals("Token_[")){
-                parea("Token_[");
+            if(valor.getTok().equals("Token_Nombre")){
+                
                 parea("Token_Nombre");
                 parea("Token_]");
                 parea("Token_->");
@@ -391,6 +397,7 @@ public class Analizador_Sintactico {
                 parea("Token_Id");
                 parea("Token_Comillas");
                 parea("Token_]");
+                parea("Token_[");
                 MUP();
             }
         }
