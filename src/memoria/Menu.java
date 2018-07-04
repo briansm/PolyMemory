@@ -16,7 +16,7 @@ import javax.swing.JPanel;
  * @author Dell E5420
  */
 public class Menu extends javax.swing.JFrame {
-    
+    Juego juego=new Juego();
     Analizador_Lexico anLe=new Analizador_Lexico();
     Prueba prueba=new Prueba();
     public Menu() {
@@ -24,6 +24,7 @@ public class Menu extends javax.swing.JFrame {
         prueba.Prueba(anLe.getLexem(),cb_Nickname);
         prueba.Prueba2(anLe.getNiveles(),cb_Nivel);
         prueba.Prueba3(anLe.getId(),cb_Idioma);
+        
         ((JPanel)getContentPane()).setOpaque(false);
         ImageIcon fondo=new ImageIcon(this.getClass().getResource("/Imagenes/menu.png"));
         JLabel fon=new JLabel();
@@ -71,6 +72,12 @@ public class Menu extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Seleccione un Nivel:");
+
+        cb_Idioma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_IdiomaActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -136,7 +143,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IngresarActionPerformed
-       Juego juego=new Juego();
+       
        juego.show();
        
     }//GEN-LAST:event_btn_IngresarActionPerformed
@@ -151,6 +158,13 @@ public class Menu extends javax.swing.JFrame {
         valorComboBox = cb_Nickname.getSelectedItem().toString();
         txt_Nickname.setText(valorComboBox);
     }//GEN-LAST:event_cb_NicknameActionPerformed
+
+    private void cb_IdiomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_IdiomaActionPerformed
+        String valorComboBox = "";
+        
+        valorComboBox = cb_Idioma.getSelectedItem().toString();
+        juego.setCadena(valorComboBox);
+    }//GEN-LAST:event_cb_IdiomaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,7 +203,7 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Ingresar;
-    private javax.swing.JComboBox<String> cb_Idioma;
+    public static javax.swing.JComboBox<String> cb_Idioma;
     private javax.swing.JComboBox<String> cb_Nickname;
     private javax.swing.JComboBox<String> cb_Nivel;
     private javax.swing.JLabel jLabel1;
