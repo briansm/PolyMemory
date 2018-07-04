@@ -138,6 +138,7 @@ public class Menu extends javax.swing.JFrame {
     private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IngresarActionPerformed
        Juego juego=new Juego();
        juego.show();
+       
     }//GEN-LAST:event_btn_IngresarActionPerformed
 
     private void txt_NicknameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_NicknameActionPerformed
