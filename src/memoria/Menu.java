@@ -143,7 +143,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IngresarActionPerformed
-       
+       juego.setUsuario(txt_Nickname.getText());
        juego.show();
        
     }//GEN-LAST:event_btn_IngresarActionPerformed

@@ -20,6 +20,7 @@ public class Juego extends javax.swing.JFrame {
      * Creates new form Juego
      */
     public String cadena;
+    public String usuario;
     public void setCadena(String cadena){
         this.cadena=cadena;
     
@@ -27,6 +28,14 @@ public class Juego extends javax.swing.JFrame {
     
     public String getCadena(){
         return cadena;
+    }
+    public void setUsuario(String cadena){
+        this.usuario=cadena;
+    
+    }
+    
+    public String getUsuario(){
+        return usuario;
     }
     
     public Juego() {
@@ -57,21 +66,19 @@ public class Juego extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        naranja = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        pelota = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        pantalon = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        guitarra = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         btn_fin = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.black);
-
-        bandera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/francia.png"))); // NOI18N
 
         jl_Idioma.setForeground(new java.awt.Color(255, 255, 255));
         jl_Idioma.setText("Idioma");
@@ -93,18 +100,6 @@ public class Juego extends javax.swing.JFrame {
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("LETS GET IT ON.mp3");
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/naranja.jpg"))); // NOI18N
-        jLabel5.setText("jLabel5");
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelota.jpg"))); // NOI18N
-        jLabel6.setText("jLabel5");
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pantalon.jpg"))); // NOI18N
-        jLabel7.setText("jLabel5");
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guitarra.jpg"))); // NOI18N
-        jLabel8.setText("jLabel5");
 
         btn_fin.setText("Finalizar");
         btn_fin.addActionListener(new java.awt.event.ActionListener() {
@@ -151,14 +146,14 @@ public class Juego extends javax.swing.JFrame {
                 .addGap(171, 171, 171)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pelota, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(guitarra, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(naranja, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pantalon, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(154, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -178,8 +173,8 @@ public class Juego extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jl_Idioma))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(jLabel6)))
+                        .addComponent(naranja)
+                        .addComponent(pelota)))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,8 +195,8 @@ public class Juego extends javax.swing.JFrame {
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7)
-                        .addComponent(jLabel8)))
+                        .addComponent(pantalon)
+                        .addComponent(guitarra)))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -222,6 +217,15 @@ public class Juego extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         jl_Idioma.setText(cadena);
+        jl_Usuario.setText(usuario);
+        ImageIcon fondoPel=new ImageIcon(this.getClass().getResource("/Imagenes/pelota.jpg"));
+        ImageIcon fondoNa=new ImageIcon(this.getClass().getResource("/Imagenes/naranja.jpg"));
+        ImageIcon fondoPant=new ImageIcon(this.getClass().getResource("/Imagenes/pantalon.jpg"));
+        ImageIcon fondoG=new ImageIcon(this.getClass().getResource("/Imagenes/guitarra.jpg"));
+        pelota.setIcon(fondoPel);
+        naranja.setIcon(fondoNa);
+        pantalon.setIcon(fondoPant);
+        guitarra.setIcon(fondoG);
         if(jl_Idioma.getText().equals("Aleman")){
             ImageIcon fondo=new ImageIcon(this.getClass().getResource("/Imagenes/alemania.png"));
             bandera.setIcon(fondo);
@@ -275,6 +279,7 @@ public class Juego extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bandera;
     private javax.swing.JButton btn_fin;
+    private javax.swing.JLabel guitarra;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -282,15 +287,14 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel jl_Idioma;
     private javax.swing.JLabel jl_Usuario;
+    private javax.swing.JLabel naranja;
+    private javax.swing.JLabel pantalon;
+    private javax.swing.JLabel pelota;
     // End of variables declaration//GEN-END:variables
 }
