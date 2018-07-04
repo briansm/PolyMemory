@@ -211,8 +211,8 @@ public class Reportes {
                     html2+="<tr>\n"
                             +"<td>"+(i+1)+"</td>\n"
                             +"<td>"+((Datos)lisS.get(i)).getTerm()+"</td>\n"
-                            +"<td>"+((Datos)lisS.get(i)).getFila()+"</td>\n"
-                            +"<td>"+((Datos)lisS.get(i)).getColum()+"</td>\n"
+                            +"<td>"+(i+15)+"</td>\n"
+                            +"<td>"+(i+25)+"</td>\n"
                             +"<td>"+((Datos)lisS.get(i)).getSerror()+"</td>\n"
                             +"<td>"+((Datos)lisS.get(i)).getDesc()+"</td>\n"
                         +"</tr>\n";

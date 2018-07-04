@@ -219,13 +219,13 @@ public class Juego extends javax.swing.JFrame {
             if(t_pelota.getText().equals("ball")){
                 puntos+=25;
                 correctas++;
-            }else if(t_naranja.getText().equals("orange")){
+            } if(t_naranja.getText().equals("orange")){
                 puntos+=25;
                 correctas++;
-            }else if(t_guitarra.getText().equals("gitarre")){
+            }if(t_guitarra.getText().equals("gitarre")){
                 puntos+=25;
                 correctas++;
-            }else if(t_pantalon.getText().equals("hosen")){
+            }if(t_pantalon.getText().equals("hosen")){
                 puntos+=25;
                 correctas++;
             }
@@ -235,13 +235,13 @@ public class Juego extends javax.swing.JFrame {
             if(t_pelota.getText().equals("ballon")){
                 puntos+=25;
                 correctas++;
-            }else if(t_naranja.getText().equals("orange")){
+            }if(t_naranja.getText().equals("orange")){
                 puntos+=25;
                 correctas++;
-            }else if(t_guitarra.getText().equals("guitare")){
+            }if(t_guitarra.getText().equals("guitare")){
                 puntos+=25;
                 correctas++;
-            }else if(t_pantalon.getText().equals("pantalon")){
+            }if(t_pantalon.getText().equals("pantalon")){
                 puntos+=25;
                 correctas++;
             }
@@ -251,27 +251,27 @@ public class Juego extends javax.swing.JFrame {
             if(t_pelota.getText().equals("ball")){
                 puntos+=25;
                 correctas++;
-            }else if(t_naranja.getText().equals("orange")){
+            }if(t_naranja.getText().equals("orange")){
                 puntos+=25;
                 correctas++;
-            }else if(t_guitarra.getText().equals("guitar")){
+            }if(t_guitarra.getText().equals("guitar")){
                 puntos+=25;
                 correctas++;
-            }else if(t_pantalon.getText().equals("pants")){
+            }if(t_pantalon.getText().equals("pants")){
                 puntos+=25;
                 correctas++;
             }
-        }else if(jl_Idioma.getText().equals("Español")){
+        }else if(jl_Idioma.getText().equals("Espanol")){
             if(t_pelota.getText().equals("pelota")){
                 puntos+=25;
                 correctas++;
-            }else if(t_naranja.getText().equals("naranja")){
+            }if(t_naranja.getText().equals("naranja")){
                 puntos+=25;
                 correctas++;
-            }else if(t_guitarra.getText().equals("guitarra")){
+            }if(t_guitarra.getText().equals("guitarra")){
                 puntos+=25;
                 correctas++;
-            }else if(t_pantalon.getText().equals("pants")){
+            }if(t_pantalon.getText().equals("pantalon")){
                 puntos+=25;
                 correctas++;
             }
@@ -309,7 +309,7 @@ public class Juego extends javax.swing.JFrame {
         }else if(jl_Idioma.getText().equals("Ingles")){
             ImageIcon fondo=new ImageIcon(this.getClass().getResource("/Imagenes/usa.png"));
             bandera.setIcon(fondo);
-        }else if(jl_Idioma.getText().equals("Español")){
+        }else if(jl_Idioma.getText().equals("Espanol")){
             ImageIcon fondo=new ImageIcon(this.getClass().getResource("/Imagenes/guate.png"));
             bandera.setIcon(fondo);
         }

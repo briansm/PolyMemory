@@ -717,7 +717,7 @@ public class Analizador_Lexico {
                     lista_idiomas.add(new Idiomas(lexema));
                 //tipo_token = "ingles";
                 break;
-                case "español":
+                case "espanol":
                     lista_idiomas.add(new Idiomas(lexema));
                 //tipo_token = "ingles";
                 break;
@@ -769,6 +769,25 @@ public class Analizador_Lexico {
                 case "carta_10":
                 //tipo_token = "ingles";
                 break;
+                case "pantalon":
+                case "ball":
+                case "ballon":
+                case "orange":
+                case "naranja":
+                case "guitar":
+                case "gitarre":
+                case "guitare":
+                case "pants":
+                case "hosen":
+                case "pelota":
+                case "guitarra":
+                  
+                
+                //tipo_token = "ingles";
+                
+                //tipo_token = "ingles";
+                break;
+                
             default:
                 tipo_token="id";
                 lista_lexemas.add(new Lexemas(lexema));
