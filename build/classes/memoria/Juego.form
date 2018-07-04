@@ -60,17 +60,17 @@
               </Group>
               <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField1" min="-2" pref="151" max="-2" attributes="0"/>
+                  <Component id="t_pelota" min="-2" pref="151" max="-2" attributes="0"/>
                   <Component id="pelota" min="-2" pref="151" max="-2" attributes="0"/>
                   <Component id="guitarra" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
-                  <Component id="jTextField4" min="-2" pref="151" max="-2" attributes="0"/>
+                  <Component id="t_guitarra" min="-2" pref="151" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="naranja" min="-2" pref="151" max="-2" attributes="0"/>
-                  <Component id="jTextField3" min="-2" pref="151" max="-2" attributes="0"/>
+                  <Component id="t_naranja" min="-2" pref="151" max="-2" attributes="0"/>
                   <Component id="pantalon" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
-                  <Component id="jTextField2" min="-2" pref="151" max="-2" attributes="0"/>
+                  <Component id="t_pantalon" min="-2" pref="151" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="154" max="32767" attributes="0"/>
           </Group>
@@ -100,8 +100,8 @@
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t_pelota" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t_naranja" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -127,8 +127,8 @@
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t_pantalon" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t_guitarra" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="27" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -206,19 +206,19 @@
     </Component>
     <Component class="javax.swing.JLabel" name="naranja">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="t_pelota">
     </Component>
     <Component class="javax.swing.JLabel" name="pelota">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="t_pantalon">
     </Component>
     <Component class="javax.swing.JLabel" name="pantalon">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="t_naranja">
     </Component>
     <Component class="javax.swing.JLabel" name="guitarra">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="t_guitarra">
     </Component>
     <Component class="javax.swing.JButton" name="btn_fin">
       <Properties>

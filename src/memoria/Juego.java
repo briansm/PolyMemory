@@ -19,6 +19,7 @@ public class Juego extends javax.swing.JFrame {
     /**
      * Creates new form Juego
      */
+    Crear_Reporte cr=new Crear_Reporte();
     public String cadena;
     public String usuario;
     public void setCadena(String cadena){
@@ -67,13 +68,13 @@ public class Juego extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         naranja = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        t_pelota = new javax.swing.JTextField();
         pelota = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        t_pantalon = new javax.swing.JTextField();
         pantalon = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        t_naranja = new javax.swing.JTextField();
         guitarra = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        t_guitarra = new javax.swing.JTextField();
         btn_fin = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
@@ -145,16 +146,16 @@ public class Juego extends javax.swing.JFrame {
                         .addComponent(jLabel4)))
                 .addGap(171, 171, 171)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(t_pelota, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pelota, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(guitarra, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(t_guitarra, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(naranja, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(t_naranja, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pantalon, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(t_pantalon, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(154, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
@@ -177,8 +178,8 @@ public class Juego extends javax.swing.JFrame {
                         .addComponent(pelota)))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(t_pelota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(t_naranja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -199,8 +200,8 @@ public class Juego extends javax.swing.JFrame {
                         .addComponent(guitarra)))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(t_pantalon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(t_guitarra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_fin)
@@ -212,7 +213,80 @@ public class Juego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_finActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_finActionPerformed
+        int puntos=0;
+        int correctas=0;
+        if(jl_Idioma.getText().equals("Aleman")){
+            if(t_pelota.getText().equals("ball")){
+                puntos+=25;
+                correctas++;
+            }else if(t_naranja.getText().equals("orange")){
+                puntos+=25;
+                correctas++;
+            }else if(t_guitarra.getText().equals("gitarre")){
+                puntos+=25;
+                correctas++;
+            }else if(t_pantalon.getText().equals("hosen")){
+                puntos+=25;
+                correctas++;
+            }
         
+        
+        }else if(jl_Idioma.getText().equals("Frances")){
+            if(t_pelota.getText().equals("ballon")){
+                puntos+=25;
+                correctas++;
+            }else if(t_naranja.getText().equals("orange")){
+                puntos+=25;
+                correctas++;
+            }else if(t_guitarra.getText().equals("guitare")){
+                puntos+=25;
+                correctas++;
+            }else if(t_pantalon.getText().equals("pantalon")){
+                puntos+=25;
+                correctas++;
+            }
+        
+        
+        }else if(jl_Idioma.getText().equals("Ingles")){
+            if(t_pelota.getText().equals("ball")){
+                puntos+=25;
+                correctas++;
+            }else if(t_naranja.getText().equals("orange")){
+                puntos+=25;
+                correctas++;
+            }else if(t_guitarra.getText().equals("guitar")){
+                puntos+=25;
+                correctas++;
+            }else if(t_pantalon.getText().equals("pants")){
+                puntos+=25;
+                correctas++;
+            }
+        }else if(jl_Idioma.getText().equals("Español")){
+            if(t_pelota.getText().equals("pelota")){
+                puntos+=25;
+                correctas++;
+            }else if(t_naranja.getText().equals("naranja")){
+                puntos+=25;
+                correctas++;
+            }else if(t_guitarra.getText().equals("guitarra")){
+                puntos+=25;
+                correctas++;
+            }else if(t_pantalon.getText().equals("pants")){
+                puntos+=25;
+                correctas++;
+            }
+        }
+        
+        
+        String reporte = "[Reporte]\n"
+                        +"[Juego]\n"
+                        +"[Usuario]="+"["+jl_Usuario.getText()+"]\n"
+                        +"[Tiempo]="+"["+"20"+"]\n"
+                        +"[Idioma]="+"["+jl_Idioma.getText()+"]\n"
+                        +"[Palabras Correctas]="+"["+correctas+"]\n"
+                        +"[Fin-Juego]\n";
+        
+        cr.guardarReporte(reporte, "Reporte");
     }//GEN-LAST:event_btn_finActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -287,14 +361,14 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel jl_Idioma;
     private javax.swing.JLabel jl_Usuario;
     private javax.swing.JLabel naranja;
     private javax.swing.JLabel pantalon;
     private javax.swing.JLabel pelota;
+    private javax.swing.JTextField t_guitarra;
+    private javax.swing.JTextField t_naranja;
+    private javax.swing.JTextField t_pantalon;
+    private javax.swing.JTextField t_pelota;
     // End of variables declaration//GEN-END:variables
 }

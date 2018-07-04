@@ -21,6 +21,8 @@ public class Crear_Reporte {
             
         }else if(tipoReporte == "Sintactico"){
             nombreArchivo="C:\\Users\\Dell E5420\\Documents\\Sintactico.html";
+        }else if(tipoReporte == "Reporte"){
+            nombreArchivo="C:\\Users\\Dell E5420\\Documents\\Reporte.txt";
         }
         
         archivo = new File(nombreArchivo);
