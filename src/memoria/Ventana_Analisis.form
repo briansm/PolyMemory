@@ -111,6 +111,7 @@
     <Component class="javax.swing.JButton" name="btn_Sintactico">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sintactico"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_SintacticoActionPerformed"/>
@@ -119,6 +120,7 @@
     <Component class="javax.swing.JButton" name="btn_Juego">
       <Properties>
         <Property name="text" type="java.lang.String" value="Juego"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_JuegoActionPerformed"/>

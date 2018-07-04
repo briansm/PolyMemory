@@ -87,6 +87,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
         });
 
         btn_Sintactico.setText("Sintactico");
+        btn_Sintactico.setEnabled(false);
         btn_Sintactico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_SintacticoActionPerformed(evt);
@@ -94,6 +95,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
         });
 
         btn_Juego.setText("Juego");
+        btn_Juego.setEnabled(false);
         btn_Juego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_JuegoActionPerformed(evt);
@@ -165,6 +167,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
                 opcion=true;
                 btn_analizar.setText("Analizar");
                 JOptionPane.showMessageDialog(rootPane, "Analisis Exitoso");
+                btn_Sintactico.setEnabled(true);
         }
         
         
@@ -209,7 +212,7 @@ public class Ventana_Analisis extends javax.swing.JFrame {
     private void btn_SintacticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SintacticoActionPerformed
        sint.Sintactico(analisis.getT());
        reportes.CrearRES(sint.getSint());
-       
+       btn_Juego.setEnabled(true);
        try {
 
             Desktop.getDesktop().browse(new URI("file:///C:/Users/Dell%20E5420/Documents/Sintactico.html"));
