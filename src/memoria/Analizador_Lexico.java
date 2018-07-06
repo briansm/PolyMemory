@@ -165,9 +165,9 @@ public class Analizador_Lexico {
                     else 
                     {
                         num++;
-                        listaTok.add(new Tokens("Token_Simbolo"));
+                        listaTok.add(new Tokens("Token_-"));
                         //lista_lexemas.add(new Lexemas(lexema));
-                        arregloToken.add(new Datos(num, lexema, "Token_Simbolo", fila, columna));
+                        arregloToken.add(new Datos(num, lexema, "Token_-", fila, columna));
                         lexema = "";
                         estado = 0;
                         i--;
@@ -176,14 +176,7 @@ public class Analizador_Lexico {
                     break;
                 //------------#Estado 4---------------------
                 case 4:
-                    num++;
-                    listaTok.add(new Tokens("TOken_Simbolo"));
-                    //lista_lexemas.add(new Lexemas(lexema));
-                    arregloToken.add(new Datos(num, lexema, "Token_Simbolo", fila, columna));
-                    lexema = "";
-                    estado = 0;
-                    i--;
-                    break;
+                    
                 //------------Estado 5---------------------
                 case 5:
                     if (caracter[i] == 92) {
